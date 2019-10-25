@@ -16,10 +16,38 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>ehcache</module>
+        <module>bean-scope-annotation</module>
+        <module>batchController</module>
+        <module>simpleRestClient</module>
+        <module>simpleSpringData</module>
+        <module>springAOP1</module>
+        <module>springCron</module>
+        <module>springHibernate5PostgresSQL</module>
+        <module>springLoginRememberMe</module>
+        <module>springBootH2Database</module>
+        <module>springBootRestApi</module>
+        <module>exampleSpringBootServlet</module>
+        <module>spring-boot-soap-example</module>
+        <module>springSimpleExampleApplicationContext</module>
     </modules>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <junit-plataform.version>5.3.1</junit-plataform.version>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
