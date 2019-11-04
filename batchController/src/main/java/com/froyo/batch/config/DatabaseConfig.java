@@ -13,8 +13,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 @Configuration
 public class DatabaseConfig {
 
-	@Value("${$Raptors14sep"
-			+ "}")
+	@Value("${service.db.user.name}")
 	private String dbUserName;
 
 	@Value("${service.db.user.password}")
