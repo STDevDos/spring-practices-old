@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2019.10.24 a las 10:59:35 PM CDT 
+// Generado el: 2019.11.02 a las 06:46:32 PM CST 
 //
 
 
@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Clase Java para user complex type.
- *
+ * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
- *
+ * 
  * <pre>
  * &lt;complexType name="user">
  *   &lt;complexContent>
@@ -32,12 +32,14 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "user", propOrder = {
-        "name",
-        "empId",
-        "salary"
+    "name",
+    "empId",
+    "salary"
 })
 public class User {
 
@@ -48,9 +50,11 @@ public class User {
 
     /**
      * Obtiene el valor de la propiedad name.
-     *
-     * @return possible object is
-     * {@link String }
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
     public String getName() {
         return name;
@@ -58,9 +62,11 @@ public class User {
 
     /**
      * Define el valor de la propiedad name.
-     *
-     * @param value allowed object is
-     *              {@link String }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
     public void setName(String value) {
         this.name = value;
@@ -68,6 +74,7 @@ public class User {
 
     /**
      * Obtiene el valor de la propiedad empId.
+     * 
      */
     public int getEmpId() {
         return empId;
@@ -75,6 +82,7 @@ public class User {
 
     /**
      * Define el valor de la propiedad empId.
+     * 
      */
     public void setEmpId(int value) {
         this.empId = value;
@@ -82,6 +90,7 @@ public class User {
 
     /**
      * Obtiene el valor de la propiedad salary.
+     * 
      */
     public double getSalary() {
         return salary;
@@ -89,6 +98,7 @@ public class User {
 
     /**
      * Define el valor de la propiedad salary.
+     * 
      */
     public void setSalary(double value) {
         this.salary = value;

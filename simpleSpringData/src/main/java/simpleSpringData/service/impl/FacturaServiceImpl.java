@@ -1,13 +1,15 @@
 package simpleSpringData.service.impl;
 
-import com.fd.simpleSpringData.domain.Factura;
-import com.fd.simpleSpringData.repository.FacturaRepository;
-import com.fd.simpleSpringData.service.FacturaService;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import simpleSpringData.domain.Factura;
+import simpleSpringData.repository.FacturaRepository;
+import simpleSpringData.service.FacturaService;
 
 /**
  * @author froy
@@ -25,8 +27,8 @@ public class FacturaServiceImpl implements FacturaService {
     }
 
     @Override
-    public Factura findOne(long rid) {
-        return facturaRepository.findOne(rid);
+    public Optional<Factura> findOne(long rid) {
+        return facturaRepository.findById(rid);
     }
 
     @Override

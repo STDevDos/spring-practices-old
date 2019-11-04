@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 /**
  * @author Muguruza
  */
-@Service(value = "FuncionesMatematicasImpl")
+@Service(value = "funcionesMatematicasImpl")
 public class FuncionesMatematicasImpl implements FuncionesMatematicas {
 
     @Override

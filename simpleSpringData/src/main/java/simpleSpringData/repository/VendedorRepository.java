@@ -1,7 +1,8 @@
 package simpleSpringData.repository;
 
-import com.fd.simpleSpringData.domain.Vendedor;
 import org.springframework.data.repository.CrudRepository;
+
+import simpleSpringData.domain.Vendedor;
 
 /**
  * @author froy

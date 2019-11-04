@@ -1,13 +1,15 @@
 package simpleSpringData.service.impl;
 
-import com.fd.simpleSpringData.domain.Categoria;
-import com.fd.simpleSpringData.repository.CategoriaRepository;
-import com.fd.simpleSpringData.service.CategoriaService;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import simpleSpringData.domain.Categoria;
+import simpleSpringData.repository.CategoriaRepository;
+import simpleSpringData.service.CategoriaService;
 
 /**
  * @author froy
@@ -25,8 +27,8 @@ public class CategoriaServiceImpl implements CategoriaService {
     }
 
     @Override
-    public Categoria findOne(long rid) {
-        return categoriaRepository.findOne(rid);
+    public Optional<Categoria> findOne(long rid) {
+        return categoriaRepository.findById(rid);
     }
 
     @Override

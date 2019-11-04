@@ -23,7 +23,7 @@ public class FacturaServiceImpl implements FacturaService {
         CustomerInfo customerInfo = new CustomerInfo();
         customerInfo.setName("Carlos Martinez");
         customerInfo.setAddress("WallStreet");
-        customerInfo.setEmail("cm850103@gmail.com");
+        customerInfo.setEmail("to@gmail.com");
         order.setCustomerInfo(customerInfo);
 
         mailService.sendEmail(order);

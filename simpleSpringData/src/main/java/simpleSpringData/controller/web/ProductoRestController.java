@@ -1,13 +1,12 @@
 package simpleSpringData.controller.web;
 
-import com.fd.simpleSpringData.domain.Categoria;
-import com.fd.simpleSpringData.domain.Factura;
-import com.fd.simpleSpringData.domain.Producto;
-import com.fd.simpleSpringData.domain.Vendedor;
-import com.fd.simpleSpringData.service.CategoriaService;
-import com.fd.simpleSpringData.service.FacturaService;
-import com.fd.simpleSpringData.service.ProductoService;
-import com.fd.simpleSpringData.service.VendedorService;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
@@ -18,11 +17,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import simpleSpringData.domain.Categoria;
+import simpleSpringData.domain.Factura;
+import simpleSpringData.domain.Producto;
+import simpleSpringData.domain.Vendedor;
+import simpleSpringData.service.CategoriaService;
+import simpleSpringData.service.FacturaService;
+import simpleSpringData.service.ProductoService;
+import simpleSpringData.service.VendedorService;
 
 /**
  * @author Muguruza
@@ -127,7 +129,7 @@ public class ProductoRestController {
 
     @RequestMapping(value = "/findByRidCategoria/{categoria}", method = RequestMethod.GET)
     public String findByRidCategoria(@PathVariable("categoria") long ridCategoria) {
-        Categoria categoria = categoriaService.findOne(ridCategoria);
+        Optional<Categoria> categoria = categoriaService.findOne(ridCategoria);
         return productoService.findByCategoria(categoria).toString();
     }
 
@@ -160,7 +162,8 @@ public class ProductoRestController {
 
     @RequestMapping(value = "/findAllPagination/{index}", method = RequestMethod.GET)
     public String findAll(@PathVariable("index") int index) {
-        Page<Producto> page = productoService.findAll(new PageRequest(index - 1, ITEMS_PER_PAGE, Direction.ASC, "rid"));
+        @SuppressWarnings("deprecation")
+		Page<Producto> page = productoService.findAll(new PageRequest(index - 1, ITEMS_PER_PAGE, Direction.ASC, "rid"));
         return page.getContent().toString();
     }
 
@@ -173,7 +176,8 @@ public class ProductoRestController {
      */
     @RequestMapping(value = "/findAllPagination2/{nombreCategoria}/{index}", method = RequestMethod.GET)
     public String findAll(@PathVariable("nombreCategoria") String nombreCategoria, @PathVariable("index") int index) {
-        Page<Producto> page = productoService.findByCategoria_Categoria(nombreCategoria, new PageRequest(index - 1, ITEMS_PER_PAGE, Direction.ASC, "rid"));
+        @SuppressWarnings("deprecation")
+		Page<Producto> page = productoService.findByCategoria_Categoria(nombreCategoria, new PageRequest(index - 1, ITEMS_PER_PAGE, Direction.ASC, "rid"));
         return page.getContent().toString();
     }
 

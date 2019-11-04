@@ -1,12 +1,14 @@
 package simpleSpringData.service;
 
-import com.fd.simpleSpringData.domain.Categoria;
-import com.fd.simpleSpringData.domain.Producto;
+import java.sql.Timestamp;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.sql.Timestamp;
-import java.util.List;
+import simpleSpringData.domain.Categoria;
+import simpleSpringData.domain.Producto;
 
 /**
  * @author froy
@@ -16,7 +18,7 @@ public interface ProductoService {
 
     public void save(List<Producto> listProducto);
 
-    public Producto findOne(long rid);
+    public Optional<Producto> findOne(long rid);
 
     public List<Producto> findAll();
 
@@ -28,7 +30,7 @@ public interface ProductoService {
 
     public long deleteByRid(long rid);
 
-    public List<Producto> findByCategoria(Categoria categoria);
+    public List<Producto> findByCategoria(Optional<Categoria> categoria);
 
     public List<Producto> findByCategoria(String nombrecategoria);
 

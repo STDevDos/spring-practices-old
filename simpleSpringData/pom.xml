@@ -11,12 +11,6 @@
 
     <artifactId>simpleSpringData</artifactId>
 
-    <!--
-		http://www.springboottutorial.com/spring-boot-starter-parent
-		spring boot startter parent contiene las dependencias necesarias para realizar
-		un proyecto "spring boot"
-	-->
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -136,7 +130,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
             </plugin>
             <!-- Start - Crear las clases querydsl, utilizar el pluing (clean project) cada vez que se alteren los pojos. -->
             <!-- 			<plugin> -->

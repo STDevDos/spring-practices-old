@@ -1,8 +1,9 @@
 package simpleSpringData.service;
 
-import com.fd.simpleSpringData.domain.Categoria;
-
 import java.util.List;
+import java.util.Optional;
+
+import simpleSpringData.domain.Categoria;
 
 /**
  * @author froy
@@ -10,7 +11,7 @@ import java.util.List;
 public interface CategoriaService {
     public void save(Categoria categoria);
 
-    public Categoria findOne(long rid);
+    public Optional<Categoria> findOne(long rid);
 
     public List<Categoria> findAll();
 }

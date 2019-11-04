@@ -1,13 +1,15 @@
 package simpleSpringData.service.impl;
 
-import com.fd.simpleSpringData.domain.Vendedor;
-import com.fd.simpleSpringData.repository.VendedorRepository;
-import com.fd.simpleSpringData.service.VendedorService;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import simpleSpringData.domain.Vendedor;
+import simpleSpringData.repository.VendedorRepository;
+import simpleSpringData.service.VendedorService;
 
 /**
  * @author froy
@@ -25,8 +27,8 @@ public class VendedorServiceImpl implements VendedorService {
     }
 
     @Override
-    public Vendedor findOne(long rid) {
-        return vendedorRepository.findOne(rid);
+    public Optional<Vendedor> findOne(long rid) {
+        return vendedorRepository.findById(rid);
     }
 
     @Override

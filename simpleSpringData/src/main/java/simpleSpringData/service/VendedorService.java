@@ -1,8 +1,9 @@
 package simpleSpringData.service;
 
-import com.fd.simpleSpringData.domain.Vendedor;
-
 import java.util.List;
+import java.util.Optional;
+
+import simpleSpringData.domain.Vendedor;
 
 /**
  * @author froy
@@ -10,7 +11,7 @@ import java.util.List;
 public interface VendedorService {
     public void save(Vendedor Vendedor);
 
-    public Vendedor findOne(long rid);
+    public Optional<Vendedor> findOne(long rid);
 
     public List<Vendedor> findAll();
 }

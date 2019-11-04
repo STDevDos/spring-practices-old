@@ -1,8 +1,9 @@
 package simpleSpringData.config;
 
-import com.fd.simpleSpringData.repository.RepositoryPackage;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+import simpleSpringData.repository.RepositoryPackage;
 
 /**
  * @author froy

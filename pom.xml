@@ -1,53 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.7.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<!--
+		http://www.springboottutorial.com/spring-boot-starter-parent
+		spring boot startter parent contiene las dependencias necesarias para realizar
+		un proyecto "spring boot"
+	-->
+	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.7.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
 
-    <groupId>com.froyo.spring</groupId>
-    <artifactId>initial-examples</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>ehcache</module>
-        <module>bean-scope-annotation</module>
-        <module>batchController</module>
-        <module>simpleRestClient</module>
-        <module>simpleSpringData</module>
-        <module>springAOP1</module>
-        <module>springCron</module>
-        <module>springHibernate5PostgresSQL</module>
-        <module>springLoginRememberMe</module>
-        <module>springBootH2Database</module>
-        <module>springBootRestApi</module>
-        <module>exampleSpringBootServlet</module>
-        <module>spring-boot-soap-example</module>
-        <module>springSimpleExampleApplicationContext</module>
-    </modules>
+	<groupId>com.froyo.spring</groupId>
+	<artifactId>initial-examples</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0-SNAPSHOT</version>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>11</java.version>
-        <maven.compiler.target>11</maven.compiler.target>
-        <maven.compiler.source>11</maven.compiler.source>
-        <junit-plataform.version>5.3.1</junit-plataform.version>
-    </properties>
+	<modules>
+		<module>ehcache</module>
+		<module>bean-scope-annotation</module>
+		<module>batchController</module>
+		<module>simpleRestClient</module>
+		<module>simpleSpringData</module>
+		<module>springAOP1</module>
+		<module>springCron</module>
+		<module>springLoginRememberMe</module>
+		<module>springBootH2Database</module>
+		<module>springBootRestApi</module>
+		<module>exampleSpringBootServlet</module>
+		<module>springSimpleExampleApplicationContext</module>
+		<module>spring-boot-soap-example</module>
+		<module>springHibernate5PostgresSQL</module>
+		<module>springBootSendEmail</module>
+		<module>springFileUpload</module>
+		<module>springProfiles</module>
+		<module>springExercises</module>
+	</modules>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
-            </plugin>
-        </plugins>
-    </build>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>11</java.version>
+		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
+		<junit-plataform.version>5.3.1</junit-plataform.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

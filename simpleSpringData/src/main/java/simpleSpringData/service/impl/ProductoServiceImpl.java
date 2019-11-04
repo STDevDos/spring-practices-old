@@ -1,21 +1,25 @@
 package simpleSpringData.service.impl;
 
-import com.fd.simpleSpringData.domain.Categoria;
-import com.fd.simpleSpringData.domain.Producto;
-import com.fd.simpleSpringData.domain.dsl.QCategoria;
-import com.fd.simpleSpringData.domain.dsl.QProducto;
-import com.fd.simpleSpringData.repository.ProductoRepository;
-import com.fd.simpleSpringData.service.ProductoService;
-import com.mysema.query.jpa.impl.JPAQuery;
+import java.sql.Timestamp;
+import java.util.List;
+import java.util.Optional;
+
+import javax.persistence.EntityManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import java.sql.Timestamp;
-import java.util.List;
+import com.mysema.query.jpa.impl.JPAQuery;
+
+import simpleSpringData.domain.Categoria;
+import simpleSpringData.domain.Producto;
+import simpleSpringData.domain.dsl.QCategoria;
+import simpleSpringData.domain.dsl.QProducto;
+import simpleSpringData.repository.ProductoRepository;
+import simpleSpringData.service.ProductoService;
 
 /**
  * @author froy
@@ -36,12 +40,12 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     public void save(List<Producto> listProducto) {
-        productoRepository.save(listProducto);
+        productoRepository.saveAll(listProducto);
     }
 
     @Override
-    public Producto findOne(long rid) {
-        return productoRepository.findOne(rid);
+    public Optional<Producto> findOne(long rid) {
+        return productoRepository.findById(rid);
     }
 
     @Override
@@ -51,7 +55,7 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     public boolean exists(long rid) {
-        return productoRepository.exists(rid);
+        return productoRepository.existsById(rid);
     }
 
     @Override
@@ -67,11 +71,6 @@ public class ProductoServiceImpl implements ProductoService {
     @Override
     public long deleteByRid(long rid) {
         return productoRepository.deleteByRid(rid);
-    }
-
-    @Override
-    public List<Producto> findByCategoria(Categoria categoria) {
-        return productoRepository.findByCategoria(categoria);
     }
 
     @Override
@@ -107,5 +106,10 @@ public class ProductoServiceImpl implements ProductoService {
     public Page<Producto> findByCategoria_Categoria(String nombreCategoria, Pageable pageable) {
         return productoRepository.findByCategoria_Categoria(nombreCategoria, pageable);
     }
+
+	@Override
+	public List<Producto> findByCategoria(Optional<Categoria> categoria) {
+		return productoRepository.findByCategoria(categoria);
+	}
 
 }

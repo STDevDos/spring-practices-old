@@ -1,15 +1,16 @@
 package simpleSpringData.domain.dsl;
 
-import com.fd.simpleSpringData.domain.Factura;
+import static com.mysema.query.types.PathMetadataFactory.forVariable;
+
+import javax.annotation.Generated;
+
 import com.mysema.query.types.Path;
 import com.mysema.query.types.PathMetadata;
 import com.mysema.query.types.path.EntityPathBase;
 import com.mysema.query.types.path.NumberPath;
 import com.mysema.query.types.path.PathInits;
 
-import javax.annotation.Generated;
-
-import static com.mysema.query.types.PathMetadataFactory.forVariable;
+import simpleSpringData.domain.Factura;
 
 
 /**

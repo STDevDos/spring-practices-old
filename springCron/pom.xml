@@ -18,7 +18,6 @@
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.source>11</maven.compiler.source>
         <junit-plataform.version>5.3.1</junit-plataform.version>
-        <org.springframework-version>4.3.4.RELEASE</org.springframework-version>
     </properties>
 
     <dependencies>
@@ -33,23 +32,19 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.6</version>
         </dependency>
 
         <!-- Start Templase Email -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
-            <!-- <version>${org.springframework-version}</version> -->
         </dependency>
         <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>javax.mail-api</artifactId>
-            <!-- <version>1.5.6</version> -->
         </dependency>
         <dependency>
             <groupId>javax.mail</groupId>
@@ -59,7 +54,6 @@
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
-            <!-- <version>2.3.23</version> -->
         </dependency>
         <!-- End Templase Email -->
 
@@ -70,7 +64,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
             </plugin>
         </plugins>
     </build>

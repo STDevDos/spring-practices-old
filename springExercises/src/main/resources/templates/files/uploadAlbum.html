@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Save album</title>
+</head>
+<body>
+<form id="formAddAlbum" method="POST" enctype="multipart/form-data">
+    <input type="file" name="photos" accept="image/png, image/jpeg" multiple>
+
+    <label for="titleAlbum">album title:</label>
+    <input type="text" name="titleAlbum" id="titleAlbum" tabindex="1"/>
+
+    <label for="dateAlbum">album date:</label>
+    <input type="text" name="dateAlbum" id="dateAlbum" tabindex="2"/>
+
+    <input type="submit" value="Save album">
+
+</form>
+<div id="#result"></div>
+</body>
+</html>
+<script>
+    $("#btnSubmit").click(function (event) {
+        //stop submit the form, we will post it manually.
+        event.preventDefault();
+        // Get form
+        var form = $('#formAddEstimate')[0];
+        var data = new FormData(form);
+        //data.append("CustomField", "This is some extra data, testing");
+        $("#btnSubmit").prop("disabled", true);
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url: "web/files/formAddAlbum",
+            data: data,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 600000,
+            success: [
+                function (data) {
+                    $("#result").text(data);
+                    console.log("SUCCESS : ", data);
+                    $("#btnSubmit").prop("disabled", false);
+                }
+            ],
+            error: [
+                function (e) {
+                    $("#result").text(e.responseText);
+                    console.log("ERROR : ", e);
+                    $("#btnSubmit").prop("disabled", false);
+                }
+            ]
+        });
+    });
+</script>

@@ -1,8 +1,9 @@
 package simpleSpringData.service;
 
-import com.fd.simpleSpringData.domain.Factura;
-
 import java.util.List;
+import java.util.Optional;
+
+import simpleSpringData.domain.Factura;
 
 /**
  * @author froy
@@ -10,7 +11,7 @@ import java.util.List;
 public interface FacturaService {
     public void save(Factura Vendedor);
 
-    public Factura findOne(long rid);
+    public Optional<Factura> findOne(long rid);
 
     public List<Factura> findAll();
 }
