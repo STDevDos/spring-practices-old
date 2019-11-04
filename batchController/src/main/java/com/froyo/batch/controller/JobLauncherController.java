@@ -109,9 +109,19 @@ public class JobLauncherController {
         }
 
         LOGGER.info("End job" + servicio + " :: ");
-
+        jobServiceTerminate();
         return jobResult;
     }
+    
+    /**
+	 * Terminate the job
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/jobTerminate")
+	public void jobServiceTerminate() {
+		System.exit(0);
+	}
 
 
 }
