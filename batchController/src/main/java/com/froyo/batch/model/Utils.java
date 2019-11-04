@@ -1,4 +1,4 @@
-package com.fd.batch.model;
+package com.froyo.batch.model;
 
 import org.apache.logging.log4j.Logger;
 

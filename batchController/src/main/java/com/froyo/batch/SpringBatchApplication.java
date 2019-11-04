@@ -1,15 +1,12 @@
-package com.fd.batch;
+package com.froyo.batch;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * @author Froy
- */
 @SpringBootApplication
 public class SpringBatchApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(SpringBatchApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBatchApplication.class, args);
+	}
 }

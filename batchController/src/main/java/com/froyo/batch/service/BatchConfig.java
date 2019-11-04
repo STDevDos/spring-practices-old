@@ -1,7 +1,5 @@
-package com.fd.batch.service;
+package com.froyo.batch.service;
 
-import com.fd.batch.model.Tabla1Model;
-import com.fd.batch.model.Tabla2Model;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -25,11 +23,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.RowMapper;
 
+import com.froyo.batch.model.Tabla1Model;
+import com.froyo.batch.model.Tabla2Model;
+
 import javax.sql.DataSource;
+
+import static com.froyo.batch.model.Utils.LOGGER;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import static com.fd.batch.model.Utils.LOGGER;
 
 
 /**

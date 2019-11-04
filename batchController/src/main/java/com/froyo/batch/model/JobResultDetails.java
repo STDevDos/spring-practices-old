@@ -1,4 +1,4 @@
-package com.fd.batch.model;
+package com.froyo.batch.model;
 
 import java.io.Serializable;
 import java.util.Date;

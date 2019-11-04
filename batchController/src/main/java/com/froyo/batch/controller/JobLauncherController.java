@@ -1,7 +1,8 @@
-package com.fd.batch.controller;
+package com.froyo.batch.controller;
 
-import com.fd.batch.model.JobResult;
-import com.fd.batch.service.BatchConfig;
+import com.froyo.batch.model.JobResult;
+import com.froyo.batch.service.BatchConfig;
+
 import org.apache.logging.log4j.LogManager;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecution;
@@ -12,10 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
+import static com.froyo.batch.model.Utils.LOGGER;
+import static com.froyo.batch.model.Utils.UNEXPECTED_ERROR;
 
-import static com.fd.batch.model.Utils.LOGGER;
-import static com.fd.batch.model.Utils.UNEXPECTED_ERROR;
+import java.util.Optional;
 
 /**
  * Main Controller.
