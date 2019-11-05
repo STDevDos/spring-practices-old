@@ -41,13 +41,6 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
-            <!-- La version del parent de spring-data-jpa es: 1.11.10 = https://docs.spring.io/spring-data/jpa/docs/1.11.10.RELEASE/reference/html/ -->
-
-            <!--
-                Actual: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
-                se agrega: 3.3.2. Null handling of repository methods
-            -->
-            <!--  <version>2.0.3.RELEASE</version> -->
         </dependency>
 
         <!-- Spring JDBC -->

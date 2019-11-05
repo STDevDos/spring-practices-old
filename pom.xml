@@ -41,6 +41,7 @@
 		<module>springFileUpload</module>
 		<module>springProfiles</module>
 		<module>springExercises</module>
+		<module>springBatchB</module>
 	</modules>
 
 	<properties>

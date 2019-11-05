@@ -11,5 +11,7 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @ToString
 public class UploadAlbumResponse extends AbstractResponse implements Serializable {
-    private RestTemplateUploadAlbumRequest restTemplateUploadAlbumRequest;
+	private static final long serialVersionUID = -7785927162545658854L;
+	
+	private RestTemplateUploadAlbumRequest restTemplateUploadAlbumRequest;
 }

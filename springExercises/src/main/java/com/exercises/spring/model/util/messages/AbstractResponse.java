@@ -14,7 +14,9 @@ import java.util.stream.Collectors;
 @ToString
 public class AbstractResponse implements Serializable {
 
-    private List<MessagePair> messagePairList = new ArrayList<>();
+	private static final long serialVersionUID = -2762361600162949130L;
+	
+	private List<MessagePair> messagePairList = new ArrayList<>();
 
     public void addMessagePair(MessagePair messagePair) {
         messagePairList.add(messagePair);

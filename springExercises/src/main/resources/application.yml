@@ -27,7 +27,7 @@ spring:
         web-allow-others: true
 h2:
   datasource:
-    jdbc-Url: jdbc:h2:mem:testdb
+    jdbc-url: jdbc:h2:mem:testdb
     username: sa
     password:
     driver-class-name: org.h2.Driver

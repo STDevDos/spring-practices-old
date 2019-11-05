@@ -11,7 +11,9 @@ import java.io.Serializable;
 @ToString
 public class MultipartFileData implements Serializable {
 
-    private byte[] bytes;
+	private static final long serialVersionUID = 3989818823419352316L;
+	
+	private byte[] bytes;
     private String contentType;
     private String originalFilename;
     private Long size;

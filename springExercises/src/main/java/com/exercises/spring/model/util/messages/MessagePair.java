@@ -13,7 +13,9 @@ import java.io.Serializable;
 @ToString
 public class MessagePair implements Serializable {
 
-    private String code;
+	private static final long serialVersionUID = 2734364864701881278L;
+	
+	private String code;
     private String description;
     private MessagePairTypeCode messagePairTypeCode;
 
