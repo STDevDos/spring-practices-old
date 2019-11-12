@@ -42,6 +42,7 @@
 		<module>springProfiles</module>
 		<module>springExercises</module>
 		<module>springBatchB</module>
+		<module>springboot-jasypt-datasource</module>
 	</modules>
 
 	<properties>
