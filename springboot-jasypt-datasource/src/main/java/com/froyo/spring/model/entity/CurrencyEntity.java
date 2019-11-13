@@ -1,4 +1,4 @@
-package com.froyo.spring.model.entity.postgres;
+package com.froyo.spring.model.entity;
 
 import java.io.Serializable;
 
@@ -10,22 +10,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import com.froyo.spring.model.entity.listener.CurrencyListener;
 
 import lombok.Data;
 import lombok.ToString;
 
 @Entity
 @Table(name = "currency")
-@EntityListeners(AuditingEntityListener.class) //Ejecutara los los procesos dentro de AuditingEntityListener en el momento que se afecte (Insert,Update,Delete) CurrrencyPostgresEntity
+@EntityListeners(CurrencyListener.class) // Listener process logs
 @Data
 @ToString
-public class CurrrencyPostgresEntity implements Serializable {
+public class CurrencyEntity implements Serializable {
 
 	private static final long serialVersionUID = 6734139637088679530L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // Each currency will be given an auto-generated unique identifier when stored
 
     @Column(name = "currency", nullable = false)

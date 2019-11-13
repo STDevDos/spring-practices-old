@@ -2,8 +2,8 @@ package com.froyo.spring.repository.postgres;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.froyo.spring.model.entity.postgres.CurrrencyPostgresEntity;
+import com.froyo.spring.model.entity.CurrencyEntity;
 
-public interface CurrencyPostgresRepository extends JpaRepository<CurrrencyPostgresEntity, Long> {
+public interface CurrencyPostgresRepository extends JpaRepository<CurrencyEntity, Long> {
     //...
 }

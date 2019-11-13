@@ -1,8 +1,10 @@
 package com.froyo.spring.config.databases.jpa;
 
-import com.froyo.spring.model.entity.postgres.DomainPackagesPostgres;
-import com.froyo.spring.repository.postgres.RepositoryPackagePostgres;
+import java.util.Properties;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -13,9 +15,8 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import javax.inject.Inject;
-import javax.sql.DataSource;
-import java.util.Properties;
+import com.froyo.spring.model.entity.DomainPackagesJPA;
+import com.froyo.spring.repository.postgres.RepositoryPackagePostgres;
 
 @Configuration
 @EnableJpaRepositories(
@@ -25,10 +26,10 @@ import java.util.Properties;
 )
 public class JPAPostgresConfig {
 
-    @Inject
+	@Autowired
     private Environment env;
 
-    @Inject
+	@Autowired
     private DataSource datasourcePostgres;
 
     @Bean(name = "postgresEntityManagerFactory")
@@ -36,7 +37,7 @@ public class JPAPostgresConfig {
 
         final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(datasourcePostgres);
-        entityManagerFactoryBean.setPackagesToScan(DomainPackagesPostgres.class.getPackageName());
+        entityManagerFactoryBean.setPackagesToScan(DomainPackagesJPA.class.getPackageName());
         entityManagerFactoryBean.setJpaVendorAdapter(this.vendorAdaptor());
 
         //entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);

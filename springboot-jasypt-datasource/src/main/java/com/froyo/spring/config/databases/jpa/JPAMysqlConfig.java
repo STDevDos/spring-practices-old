@@ -1,9 +1,10 @@
-package com.exercises.spring.config.databases.jpa;
+package com.froyo.spring.config.databases.jpa;
 
 import java.util.Properties;
 
 import javax.sql.DataSource;
 
+import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,33 +16,33 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import com.exercises.spring.model.entity.postgres.DomainPackagesPostgres;
-import com.exercises.spring.repository.postgres.RepositoryPackagePostgres;
+import com.froyo.spring.model.entity.DomainPackagesJPA;
+import com.froyo.spring.repository.mysql.RepositoryPackageMysql;
 
 @Configuration
 @EnableJpaRepositories(
-        entityManagerFactoryRef = "postgresEntityManagerFactory",
-        transactionManagerRef = "postgresTransactionManager",
-        basePackageClasses = RepositoryPackagePostgres.class
+        entityManagerFactoryRef = "mysqlEntityManagerFactory",
+        transactionManagerRef = "mysqlTransactionManager",
+        basePackageClasses = RepositoryPackageMysql.class
 )
-public class JPAPostgresConfig {
+public class JPAMysqlConfig {
 
-	@Autowired
+    @Autowired
     private Environment env;
 
-	@Autowired
-    private DataSource datasourcePostgres;
+    @Autowired
+    private DataSource datasourceMysql;
 
-    @Bean(name = "postgresEntityManagerFactory")
-    public LocalContainerEntityManagerFactoryBean postgresEntityManagerFactory() {
+    @Bean(name = "mysqlEntityManagerFactory")
+    public LocalContainerEntityManagerFactoryBean mysqlEntityManagerFactory() {
 
         final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setDataSource(datasourcePostgres);
-        entityManagerFactoryBean.setPackagesToScan(DomainPackagesPostgres.class.getPackageName());
+        entityManagerFactoryBean.setDataSource(datasourceMysql);
+        entityManagerFactoryBean.setPackagesToScan(DomainPackagesJPA.class.getPackageName());
         entityManagerFactoryBean.setJpaVendorAdapter(this.vendorAdaptor());
 
-        //entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
-        //entityManagerFactoryBean.setPersistenceUnitName("postgres");
+        entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
+        entityManagerFactoryBean.setPersistenceUnitName("mysql");
 
         entityManagerFactoryBean.setJpaProperties(this.jpaHibernateProperties());
         //entityManagerFactoryBean.afterPropertiesSet();
@@ -49,18 +50,18 @@ public class JPAPostgresConfig {
         return entityManagerFactoryBean;
     }
 
-    @Bean(name = "postgresTransactionManager")
-    public PlatformTransactionManager postgresTransactionManager() {
+    @Bean(name = "mysqlTransactionManager")
+    public PlatformTransactionManager mysqlTransactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
-        transactionManager.setEntityManagerFactory(postgresEntityManagerFactory().getObject());
+        transactionManager.setEntityManagerFactory(mysqlEntityManagerFactory().getObject());
         return transactionManager;
     }
 
     private Properties jpaHibernateProperties() {
         final Properties properties = new Properties();
-        properties.setProperty("hibernate.show_sql", env.getProperty("postgresql.jpa.show-sql"));
-        properties.setProperty("hibernate.dialect", env.getProperty("postgresql.jpa.properties.hibernate.dialect"));
-        properties.setProperty("hibernate.hbm2ddl.auto", env.getProperty("postgresql.jpa.properties.hibernate.ddl-auto"));
+        properties.setProperty("hibernate.show_sql", env.getProperty("mysql.jpa.show-sql"));
+        properties.setProperty("hibernate.dialect", env.getProperty("mysql.jpa.properties.hibernate.dialect"));
+        properties.setProperty("hibernate.hbm2ddl.auto", env.getProperty("mysql.jpa.properties.hibernate.ddl-auto"));
         return properties;
     }
 

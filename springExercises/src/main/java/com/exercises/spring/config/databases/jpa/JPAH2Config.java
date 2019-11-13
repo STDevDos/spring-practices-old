@@ -1,7 +1,11 @@
 package com.exercises.spring.config.databases.jpa;
 
-import com.exercises.spring.repository.h2.RepositoryPackageH2;
+import java.util.Properties;
+
+import javax.sql.DataSource;
+
 import org.hibernate.jpa.HibernatePersistenceProvider;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -11,9 +15,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import javax.inject.Inject;
-import javax.sql.DataSource;
-import java.util.Properties;
+import com.exercises.spring.repository.h2.RepositoryPackageH2;
 
 @EnableJpaRepositories(
         entityManagerFactoryRef = "h2EntityManagerFactory",
@@ -22,10 +24,10 @@ import java.util.Properties;
 )
 public class JPAH2Config {
 
-    @Inject
+	@Autowired
     private Environment env;
 
-    @Inject
+	@Autowired
     private DataSource datasourceH2;
 
     @Bean(name = "h2EntityManagerFactory")
