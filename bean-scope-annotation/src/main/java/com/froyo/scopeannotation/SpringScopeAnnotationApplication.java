@@ -1,4 +1,4 @@
-package com.javasampleapproach.scopeannotation;
+package com.froyo.scopeannotation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
