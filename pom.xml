@@ -24,7 +24,7 @@
 
 	<modules>
 		<module>ehcache</module>
-		<module>bean-scope-annotation</module>
+		<module>springboot-bean-scope-annotation</module>
 		<module>batchController</module>
 		<module>simpleRestClient</module>
 		<module>simpleSpringData</module>
