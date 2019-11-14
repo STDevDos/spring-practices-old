@@ -141,6 +141,13 @@
             <version>${junit-plataform.version}</version>
             <scope>test</scope> <!-- test folder -->
         </dependency>
+        
+        <!-- Util @Data,@Getter anotaciones para pojos -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
 
     </dependencies>
 
