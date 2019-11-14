@@ -1,1 +1,1 @@
-# springSimpleExampleApplicationContext
+# spring-applicationcontext

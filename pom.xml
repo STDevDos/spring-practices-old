@@ -34,7 +34,7 @@
 		<module>springBootH2Database</module>
 		<module>springBootRestApi</module>
 		<module>exampleSpringBootServlet</module>
-		<module>springSimpleExampleApplicationContext</module>
+		<module>spring-applicationcontext</module>
 		<module>spring-boot-soap-example</module>
 		<module>springHibernate5PostgresSQL</module>
 		<module>springBootSendEmail</module>

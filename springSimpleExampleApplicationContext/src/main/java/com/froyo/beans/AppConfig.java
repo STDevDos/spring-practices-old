@@ -1,4 +1,4 @@
-package com.tcs.beans;
+package com.froyo.beans;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,12 +13,9 @@ public class AppConfig {
      *   <bean name="mundo" class="com.tcs.AppConfig"/>
      * </beans>
      *
-     * the name of the name it is the name of the name of the function.
-     * bound to an object instance type: com.tcs.beans.AppConfig
-     *
      */
     @Bean
-    public Mundo mundo() {
+    public Mundo tierra() {
         return new Mundo();
     }
 }

@@ -1,4 +1,4 @@
-package com.tcs.beans;
+package com.froyo.beans;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

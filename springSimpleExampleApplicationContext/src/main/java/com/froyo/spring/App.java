@@ -1,10 +1,11 @@
-package com.tcs.spring;
+package com.froyo.spring;
 
-import com.tcs.beans.AppConfig;
-import com.tcs.beans.AppConfig2;
-import com.tcs.beans.Mundo;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.froyo.beans.AppConfig;
+import com.froyo.beans.AppConfig2;
+import com.froyo.beans.Mundo;
 
 //import org.springframework.context.support.ClassPathXmlApplicationContext;
 
