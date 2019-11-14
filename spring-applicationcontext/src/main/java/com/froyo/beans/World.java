@@ -4,9 +4,9 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 
 @Data
-public class Mundo {
+public class World {
 
-    @Value("Hola Mundo")
-    private String saludo;
+    @Value("Hi world")
+    private String greeting;
 
 }

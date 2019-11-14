@@ -1,19 +1,18 @@
 package com.froyo.spring;
 
-import com.froyo.beans.Mundo;
-import org.springframework.context.ApplicationContext;
+import com.froyo.beans.World;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AppXML {
 
     public static void main(String[] args) {
-        ApplicationContext appContext = new ClassPathXmlApplicationContext("com/tcs/xml/beans.xml");
+        ConfigurableApplicationContext appContext = new ClassPathXmlApplicationContext("com/tcs/xml/beans.xml");
 
-        Mundo m = (Mundo) appContext.getBean("marte"); /* Nombre del bean */
-        System.out.println(m.getSaludo());
+        World m = (World) appContext.getBean("saturn"); /* name of the bean */
+        System.out.println(m.getGreeting());
 
-        ((ConfigurableApplicationContext) appContext).close();
+        appContext.close();
     }
 
 }
