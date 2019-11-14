@@ -1,7 +1,6 @@
 package com.fd.pesistence.controller;
 
 import com.fd.pesistence.entity.Persona;
-import com.fd.pesistence.entity.Persona_;
 import com.fd.pesistence.hibernate.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -52,13 +51,6 @@ public class PersonaController {
         return "La nueva persona se ha insertado correctamente: " + persona;
     }
 
-    /**
-     * Un ejemplo para select en la BD por medio de GET
-     *
-     * @param nombre
-     * @param rfc
-     * @return
-     */
     @RequestMapping(value = "/selectPersonaHQL", method = RequestMethod.GET)
     public String selectPersonaHQL() {
 
@@ -101,8 +93,8 @@ public class PersonaController {
             CriteriaQuery<Persona> query = builder.createQuery(Persona.class);
 
             Root<Persona> root = query.from(Persona.class);
-            //query.select(root).where(builder.equal(root.get("rid"), 10));
-            query.select(root).where(builder.equal(root.get(Persona_.rid), 10));
+            query.select(root).where(builder.equal(root.get("rid"), 10));
+            //query.select(root).where(builder.equal(root.get(Persona_.rid), 10));
 
             Query<Persona> q = session.createQuery(query);
             personas = q.getResultList();
@@ -141,8 +133,8 @@ public class PersonaController {
             CriteriaQuery<Persona> query = builder.createQuery(Persona.class);
 
             Root<Persona> root = query.from(Persona.class);
-            //query.select(root).where(builder.equal(root.get("rid"), 10));
-            query.select(root).where(builder.equal(root.get(Persona_.rid), 10));
+            query.select(root).where(builder.equal(root.get("rid"), 10));
+            //query.select(root).where(builder.equal(root.get(Persona_.rid), 10));
 
             Query<Persona> q = session.createQuery(query);
             persona = q.getSingleResult();

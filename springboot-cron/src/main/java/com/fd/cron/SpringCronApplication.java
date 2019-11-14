@@ -4,10 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
@@ -19,9 +16,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * CommandLineRunner:In Spring Boot, to create a non-web application, implements CommandLineRunner and override the run method.
  */
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.fd.cron"})    //Scan all classes below this packet.
 @EnableScheduling
-@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 //Cannot determine embedded database driver class for database type NONE
 public class SpringCronApplication {
 

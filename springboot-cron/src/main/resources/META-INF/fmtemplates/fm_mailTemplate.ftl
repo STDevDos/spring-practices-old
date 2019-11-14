@@ -4,6 +4,6 @@
 <div>
     Your order id is : ${order.orderId}.
 </div>
-<span style="font-family:verdana;font-size:10;color:grey">Sent using FreeMarker Template</span>
+<span style="font-family:Courier, Monaco, monospace;font-size:10px;color:grey">Sent using FreeMarker Template</span>
 </body>
 </html>
