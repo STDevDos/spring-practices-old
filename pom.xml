@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	
-	<!--
-		http://www.springboottutorial.com/spring-boot-starter-parent
-		spring boot startter parent contiene las dependencias necesarias para realizar
-		un proyecto "spring boot"
-	-->
-	
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.7.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
-	</parent>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.froyo.spring</groupId>
-	<artifactId>initial-examples</artifactId>
-	<packaging>pom</packaging>
-	<version>1.0-SNAPSHOT</version>
+    <!--
+        http://www.springboottutorial.com/spring-boot-starter-parent
+        spring boot startter parent contiene las dependencias necesarias para realizar
+        un proyecto "spring boot"
+    -->
 
-	<modules>
-		<module>spring-applicationcontext</module>
-		<module>springboot-aop</module>
-		<module>springboot-bean-scope-annotation</module>
-		<module>springboot-cron</module>
-		<module>springboot-ehcache</module>
-		<module>springboot-exercises</module>
-		<module>springboot-fileupload</module>
-		<module>springboot-h2database</module>
-		<module>springboot-hibernate5-postgres</module>
-		<module>springboot-jasypt-datasource</module>
-		<module>springboot-loginrememberme</module>
-		<module>springboot-profiles</module>
-		<module>springboot-restapi</module>
-		<module>springboot-restclient</module>
-		<module>springboot-sendemail</module>
-		<module>springboot-servlet</module>
-		<module>springboot-soap</module>
-		<module>springboot-springdata</module>
-	</modules>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.7.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>11</java.version>
-		<maven.compiler.target>11</maven.compiler.target>
-		<maven.compiler.source>11</maven.compiler.source>
-		<junit-plataform.version>5.3.1</junit-plataform.version>
-	</properties>
+    <groupId>com.froyo.spring</groupId>
+    <artifactId>initial-examples</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+    <modules>
+        <module>spring-applicationcontext</module>
+        <module>springboot-aop</module>
+        <module>springboot-bean-scope-annotation</module>
+        <module>springboot-cron</module>
+        <module>springboot-ehcache</module>
+        <module>springboot-exercises</module>
+        <module>springboot-fileupload</module>
+        <module>springboot-h2database</module>
+        <module>springboot-hibernate5-postgres</module>
+        <module>springboot-jasypt-datasource</module>
+        <module>springboot-loginrememberme</module>
+        <module>springboot-profiles</module>
+        <module>springboot-restapi</module>
+        <module>springboot-restclient</module>
+        <module>springboot-sendemail</module>
+        <module>springboot-servlet</module>
+        <module>springboot-soap</module>
+        <module>springboot-springdata</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>11</java.version>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <junit-plataform.version>5.3.1</junit-plataform.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -13,9 +13,9 @@ import javax.xml.bind.annotation.*;
 
 /**
  * <p>Clase Java para anonymous complex type.
- * 
+ *
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -27,12 +27,10 @@ import javax.xml.bind.annotation.*;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "name"
+        "name"
 })
 @XmlRootElement(name = "getUserRequest")
 public class GetUserRequest {
@@ -42,11 +40,9 @@ public class GetUserRequest {
 
     /**
      * Obtiene el valor de la propiedad name.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getName() {
         return name;
@@ -54,11 +50,9 @@ public class GetUserRequest {
 
     /**
      * Define el valor de la propiedad name.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setName(String value) {
         this.name = value;

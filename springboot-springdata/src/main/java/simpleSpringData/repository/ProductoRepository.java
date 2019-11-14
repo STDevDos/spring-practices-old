@@ -23,7 +23,7 @@ public interface ProductoRepository extends CrudRepository<Producto, Long> {
      * @param nombreProducto
      * @return
      */
-    public List<Producto> findByNombreProductoLike(String nombreProducto);
+    List<Producto> findByNombreProductoLike(String nombreProducto);
 
     /**
      * SELECT * FROM tblproducto WHERE update_date --
@@ -31,7 +31,7 @@ public interface ProductoRepository extends CrudRepository<Producto, Long> {
      * @param updateDate
      * @return
      */
-    public List<Producto> findByDateUpdateLessThan(Timestamp updateDate);
+    List<Producto> findByDateUpdateLessThan(Timestamp updateDate);
 
     /**
      * DELETE
@@ -39,7 +39,7 @@ public interface ProductoRepository extends CrudRepository<Producto, Long> {
      * @param rid
      * @return
      */
-    public long deleteByRid(long rid);
+    long deleteByRid(long rid);
 
     /**
      * Obtener una lista de productos de una categoría.
@@ -47,7 +47,7 @@ public interface ProductoRepository extends CrudRepository<Producto, Long> {
      * @param categoria
      * @return
      */
-    public List<Producto> findByCategoria(Optional<Categoria> categoria);
+    List<Producto> findByCategoria(Optional<Categoria> categoria);
 
     /**
      * Usando querydsl
@@ -55,7 +55,7 @@ public interface ProductoRepository extends CrudRepository<Producto, Long> {
      * @param nombrecategoria
      * @return
      */
-    public List<Producto> findByCategoria(String nombrecategoria);
+    List<Producto> findByCategoria(String nombrecategoria);
 
     /**
      * Obtener todos los productos de finBy"Entidad"_"Atributo"() = Cantegoria_Categoria
@@ -63,7 +63,7 @@ public interface ProductoRepository extends CrudRepository<Producto, Long> {
      * @param nombrecategoria
      * @return
      */
-    public List<Producto> findByCategoria_Categoria(String nombrecategoria);
+    List<Producto> findByCategoria_Categoria(String nombrecategoria);
 
     /**
      * Buscando por Entidad Categoria.categoria & Entidad Producto.dateUpdate_LessThan
@@ -73,7 +73,7 @@ public interface ProductoRepository extends CrudRepository<Producto, Long> {
      * @param nombrecategoria
      * @return Referencia: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods
      */
-    public List<Producto> findByCategoria_CategoriaAndDateUpdate_LessThan(String nombrecategoria, Timestamp dateUpdate);
+    List<Producto> findByCategoria_CategoriaAndDateUpdate_LessThan(String nombrecategoria, Timestamp dateUpdate);
 
     /**
      * Páginación.
@@ -81,13 +81,13 @@ public interface ProductoRepository extends CrudRepository<Producto, Long> {
      * @param pageable
      * @return
      */
-    public Page<Producto> findAll(Pageable pageable);
+    Page<Producto> findAll(Pageable pageable);
 
     /**
      * @param nombreCategoria
      * @param pageable
      * @return
      */
-    public Page<Producto> findByCategoria_Categoria(String nombreCategoria, Pageable pageable);
+    Page<Producto> findByCategoria_Categoria(String nombreCategoria, Pageable pageable);
 
 }

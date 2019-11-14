@@ -9,7 +9,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 public class UploadAlbumResponse extends AbstractResponse {
-	private static final long serialVersionUID = -7785927162545658854L;
-	
-	private RestTemplateUploadAlbumRequest restTemplateUploadAlbumRequest;
+    private static final long serialVersionUID = -7785927162545658854L;
+
+    private RestTemplateUploadAlbumRequest restTemplateUploadAlbumRequest;
 }

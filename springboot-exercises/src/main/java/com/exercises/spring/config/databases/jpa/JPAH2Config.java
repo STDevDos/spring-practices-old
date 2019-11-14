@@ -22,10 +22,10 @@ import java.util.Properties;
 )
 public class JPAH2Config {
 
-	@Autowired
+    @Autowired
     private Environment env;
 
-	@Autowired
+    @Autowired
     private DataSource datasourceH2;
 
     @Bean(name = "h2EntityManagerFactory")

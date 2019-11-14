@@ -1,10 +1,9 @@
 package com.froyo.scopeannotation.bean;
 
-import org.springframework.stereotype.Component;
-import org.springframework.web.context.annotation.RequestScope;
-
 import lombok.Data;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
 @Log4j2
 @Data

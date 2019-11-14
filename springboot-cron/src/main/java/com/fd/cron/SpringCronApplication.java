@@ -35,7 +35,7 @@ public class SpringCronApplication {
      *
      * @param args
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         LOGGER.info("SpringCronApplication::main");
         SpringApplication.run(SpringCronApplication.class, args);
     }

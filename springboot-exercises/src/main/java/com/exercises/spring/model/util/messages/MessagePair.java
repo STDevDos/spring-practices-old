@@ -9,10 +9,10 @@ import java.io.Serializable;
 @Data
 public class MessagePair implements Serializable {
 
-	private static final long serialVersionUID = 2734364864701881278L;
+    private static final long serialVersionUID = 2734364864701881278L;
 
-	private String code;
-	private String description;
-	private MessagePairTypeCode messagePairTypeCode;
+    private String code;
+    private String description;
+    private MessagePairTypeCode messagePairTypeCode;
 
 }

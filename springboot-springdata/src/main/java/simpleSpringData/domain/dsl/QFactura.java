@@ -18,12 +18,9 @@ import static com.mysema.query.types.PathMetadataFactory.forVariable;
 @Generated("com.mysema.query.codegen.EntitySerializer")
 public class QFactura extends EntityPathBase<Factura> {
 
-    private static final long serialVersionUID = -433410960L;
-
-    private static final PathInits INITS = PathInits.DIRECT2;
-
     public static final QFactura factura = new QFactura("factura");
-
+    private static final long serialVersionUID = -433410960L;
+    private static final PathInits INITS = PathInits.DIRECT2;
     public final QProductoVendedor pk;
 
     public final QProducto producto;

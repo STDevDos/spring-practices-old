@@ -20,13 +20,11 @@ import java.util.Map;
 @Service("mailServiceImpl")
 public class MailServiceImpl implements MailService {
 
+    private static final String FM_MAILTEMPLATE = "fm_mailTemplate.ftl";
     @Autowired
     private JavaMailSender mailSender;
-
     @Autowired
     private Configuration freemarkerConfiguration;
-
-    private static final String FM_MAILTEMPLATE = "fm_mailTemplate.ftl";
 
     private MimeMessagePreparator getMessagePreparator(final ProductOrder order) {
 

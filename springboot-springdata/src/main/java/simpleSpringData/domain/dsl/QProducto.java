@@ -17,12 +17,9 @@ import static com.mysema.query.types.PathMetadataFactory.forVariable;
 @Generated("com.mysema.query.codegen.EntitySerializer")
 public class QProducto extends EntityPathBase<Producto> {
 
-    private static final long serialVersionUID = -2066150552L;
-
-    private static final PathInits INITS = PathInits.DIRECT2;
-
     public static final QProducto producto = new QProducto("producto");
-
+    private static final long serialVersionUID = -2066150552L;
+    private static final PathInits INITS = PathInits.DIRECT2;
     public final QCategoria categoria;
 
     public final DateTimePath<java.sql.Timestamp> dateUpdate = createDateTime("dateUpdate", java.sql.Timestamp.class);

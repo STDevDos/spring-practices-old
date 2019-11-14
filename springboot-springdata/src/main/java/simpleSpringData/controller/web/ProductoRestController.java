@@ -162,7 +162,7 @@ public class ProductoRestController {
     @RequestMapping(value = "/findAllPagination/{index}", method = RequestMethod.GET)
     public String findAll(@PathVariable("index") int index) {
         @SuppressWarnings("deprecation")
-		Page<Producto> page = productoService.findAll(new PageRequest(index - 1, ITEMS_PER_PAGE, Direction.ASC, "rid"));
+        Page<Producto> page = productoService.findAll(new PageRequest(index - 1, ITEMS_PER_PAGE, Direction.ASC, "rid"));
         return page.getContent().toString();
     }
 
@@ -176,7 +176,7 @@ public class ProductoRestController {
     @RequestMapping(value = "/findAllPagination2/{nombreCategoria}/{index}", method = RequestMethod.GET)
     public String findAll(@PathVariable("nombreCategoria") String nombreCategoria, @PathVariable("index") int index) {
         @SuppressWarnings("deprecation")
-		Page<Producto> page = productoService.findByCategoria_Categoria(nombreCategoria, new PageRequest(index - 1, ITEMS_PER_PAGE, Direction.ASC, "rid"));
+        Page<Producto> page = productoService.findByCategoria_Categoria(nombreCategoria, new PageRequest(index - 1, ITEMS_PER_PAGE, Direction.ASC, "rid"));
         return page.getContent().toString();
     }
 

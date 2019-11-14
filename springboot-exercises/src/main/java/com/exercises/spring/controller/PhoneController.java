@@ -14,7 +14,7 @@ import java.util.Map;
 @RequestMapping("/api/v1")
 public class PhoneController {
 
-	@Autowired
+    @Autowired
     private PhoneRepository phoneRepository;
 
     // GET method to fetch all phones

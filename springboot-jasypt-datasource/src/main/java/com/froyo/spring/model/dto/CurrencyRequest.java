@@ -9,6 +9,6 @@ import lombok.ToString;
 @ToString
 public class CurrencyRequest {
 
-	private String currency;
-	
+    private String currency;
+
 }

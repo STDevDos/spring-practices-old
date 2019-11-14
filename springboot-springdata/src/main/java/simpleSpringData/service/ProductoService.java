@@ -13,31 +13,31 @@ import java.util.Optional;
  * @author froy
  */
 public interface ProductoService {
-    public void save(Producto producto);
+    void save(Producto producto);
 
-    public void save(List<Producto> listProducto);
+    void save(List<Producto> listProducto);
 
-    public Optional<Producto> findOne(long rid);
+    Optional<Producto> findOne(long rid);
 
-    public List<Producto> findAll();
+    List<Producto> findAll();
 
-    public boolean exists(long rid);
+    boolean exists(long rid);
 
-    public List<Producto> findByNombreProductoLike(String nombreProducto);
+    List<Producto> findByNombreProductoLike(String nombreProducto);
 
-    public List<Producto> findByDateUpdateLessThan(Timestamp updateDate);
+    List<Producto> findByDateUpdateLessThan(Timestamp updateDate);
 
-    public long deleteByRid(long rid);
+    long deleteByRid(long rid);
 
-    public List<Producto> findByCategoria(Optional<Categoria> categoria);
+    List<Producto> findByCategoria(Optional<Categoria> categoria);
 
-    public List<Producto> findByCategoria(String nombrecategoria);
+    List<Producto> findByCategoria(String nombrecategoria);
 
-    public List<Producto> findByCategoria_Categoria(String nombrecategoria);
+    List<Producto> findByCategoria_Categoria(String nombrecategoria);
 
-    public List<Producto> findByCategoria_CategoriaAndDateUpdate_LessThan(String nombrecategoria, Timestamp dateUpdate);
+    List<Producto> findByCategoria_CategoriaAndDateUpdate_LessThan(String nombrecategoria, Timestamp dateUpdate);
 
-    public Page<Producto> findAll(Pageable pageable);
+    Page<Producto> findAll(Pageable pageable);
 
-    public Page<Producto> findByCategoria_Categoria(String nombreCategoria, Pageable pageable);
+    Page<Producto> findByCategoria_Categoria(String nombreCategoria, Pageable pageable);
 }

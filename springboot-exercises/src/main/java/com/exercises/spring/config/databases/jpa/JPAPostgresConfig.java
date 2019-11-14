@@ -24,10 +24,10 @@ import java.util.Properties;
 )
 public class JPAPostgresConfig {
 
-	@Autowired
+    @Autowired
     private Environment env;
 
-	@Autowired
+    @Autowired
     private DataSource datasourcePostgres;
 
     @Bean(name = "postgresEntityManagerFactory")

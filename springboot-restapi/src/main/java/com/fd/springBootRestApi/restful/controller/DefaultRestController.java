@@ -7,28 +7,28 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/home")
 public class DefaultRestController {
-	
-	@RequestMapping()
+
+    @RequestMapping()
     public String home() {
         return "This is a default method for the RestController.";
     }
 
-	@RequestMapping("/*")
-	public String homeAll() {
-		return "homeAll";
-	}
-	
-	@GetMapping("/homePage1")
-	public String homePage1() {
-		return "homePage1";
-	}
-	
-	@RequestMapping({
-		"/homePage2",
-		"/homePage3"
-	})
-	public String homePageTwoThree() {
-		return "homePageTwoThree";
-	}
+    @RequestMapping("/*")
+    public String homeAll() {
+        return "homeAll";
+    }
+
+    @GetMapping("/homePage1")
+    public String homePage1() {
+        return "homePage1";
+    }
+
+    @RequestMapping({
+            "/homePage2",
+            "/homePage3"
+    })
+    public String homePageTwoThree() {
+        return "homePageTwoThree";
+    }
 
 }

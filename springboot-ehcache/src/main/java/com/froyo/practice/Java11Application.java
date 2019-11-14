@@ -1,4 +1,4 @@
-package com.froyo.practice.practice;
+package com.froyo.practice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

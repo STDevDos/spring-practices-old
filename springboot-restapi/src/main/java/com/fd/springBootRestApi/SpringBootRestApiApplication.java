@@ -15,7 +15,7 @@ public class SpringBootRestApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringBootRestApiApplication.class, args);
     }
-    
+
     @Bean(name = "encryptorBean")
     public StringEncryptor stringEncryptor() {
         PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
@@ -30,5 +30,5 @@ public class SpringBootRestApiApplication {
         encryptor.setConfig(config);
         return encryptor;
     }
-    
+
 }

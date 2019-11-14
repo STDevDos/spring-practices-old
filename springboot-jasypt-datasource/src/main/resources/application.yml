@@ -1,6 +1,6 @@
 spring:
   application:
-    name: SpringBoot-jasypt-datasource		
+    name: SpringBoot-jasypt-datasource
   # -------------------------------- H2 Settings -------------------------------- #
   h2:
     console:
@@ -8,7 +8,7 @@ spring:
       path: /h2
       settings:
         web-allow-others: true
-        
+
 # -------------------------------- Datasources -------------------------------- #
 h2:
   datasource:

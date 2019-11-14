@@ -57,12 +57,12 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     public List<Producto> findByNombreProductoLike(String nombreProducto) {
-        return (List<Producto>) productoRepository.findByNombreProductoLike("%" + nombreProducto + "%");
+        return productoRepository.findByNombreProductoLike("%" + nombreProducto + "%");
     }
 
     @Override
     public List<Producto> findByDateUpdateLessThan(Timestamp updateDate) {
-        return (List<Producto>) productoRepository.findByDateUpdateLessThan(updateDate);
+        return productoRepository.findByDateUpdateLessThan(updateDate);
     }
 
     @Override
@@ -104,9 +104,9 @@ public class ProductoServiceImpl implements ProductoService {
         return productoRepository.findByCategoria_Categoria(nombreCategoria, pageable);
     }
 
-	@Override
-	public List<Producto> findByCategoria(Optional<Categoria> categoria) {
-		return productoRepository.findByCategoria(categoria);
-	}
+    @Override
+    public List<Producto> findByCategoria(Optional<Categoria> categoria) {
+        return productoRepository.findByCategoria(categoria);
+    }
 
 }

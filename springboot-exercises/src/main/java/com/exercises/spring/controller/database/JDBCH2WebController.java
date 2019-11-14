@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("jdbcH2")
 public class JDBCH2WebController {
 
-	@Autowired
+    @Autowired
     private JDBCH2Service jdbch2Service;
 
     @ResponseBody

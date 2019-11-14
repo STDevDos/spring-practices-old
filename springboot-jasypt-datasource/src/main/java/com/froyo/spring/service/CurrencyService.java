@@ -5,6 +5,6 @@ import com.froyo.spring.model.dto.CurrencyResponse;
 
 public interface CurrencyService {
 
-	CurrencyResponse saveCurrency(final CurrencyRequest currencyEntityDTO);
+    CurrencyResponse saveCurrency(final CurrencyRequest currencyEntityDTO);
 
 }

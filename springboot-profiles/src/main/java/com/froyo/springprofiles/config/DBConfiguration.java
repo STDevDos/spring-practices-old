@@ -7,9 +7,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Data
 public class DBConfiguration {
 
-	private String driverClassName;
-	private String url;
-	private String userName;
-	private String password;
+    private String driverClassName;
+    private String url;
+    private String userName;
+    private String password;
 
 }

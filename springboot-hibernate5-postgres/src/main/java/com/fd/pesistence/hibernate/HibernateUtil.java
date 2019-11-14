@@ -19,11 +19,10 @@ import org.slf4j.LoggerFactory;
  */
 public class HibernateUtil {
 
-    private HibernateUtil() {
-    }
-
     private static final Logger LOGGER = LoggerFactory.getLogger(HibernateUtil.class);
     private static final SessionFactory sessionFactory = buildSessionFactory();
+    private HibernateUtil() {
+    }
 
     /**
      * Construyendo la session factory como método privado.

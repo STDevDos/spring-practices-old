@@ -1,7 +1,7 @@
 package com.froyo.spring.config.databases.datasources;
 
-import javax.sql.DataSource;
-
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,8 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
+import javax.sql.DataSource;
 
 @Configuration
 @ConfigurationProperties(prefix = "h2.datasource")

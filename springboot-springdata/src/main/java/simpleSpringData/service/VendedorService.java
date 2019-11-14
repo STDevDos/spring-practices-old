@@ -9,9 +9,9 @@ import java.util.Optional;
  * @author froy
  */
 public interface VendedorService {
-    public void save(Vendedor Vendedor);
+    void save(Vendedor Vendedor);
 
-    public Optional<Vendedor> findOne(long rid);
+    Optional<Vendedor> findOne(long rid);
 
-    public List<Vendedor> findAll();
+    List<Vendedor> findAll();
 }

@@ -17,10 +17,8 @@ import static com.mysema.query.types.PathMetadataFactory.forVariable;
 @Generated("com.mysema.query.codegen.EntitySerializer")
 public class QVendedor extends EntityPathBase<Vendedor> {
 
-    private static final long serialVersionUID = 1119025903L;
-
     public static final QVendedor vendedor = new QVendedor("vendedor");
-
+    private static final long serialVersionUID = 1119025903L;
     public final SetPath<Factura, QFactura> facturarSet = this.<Factura, QFactura>createSet("facturarSet", Factura.class, QFactura.class, PathInits.DIRECT2);
 
     public final StringPath nombre = createString("nombre");

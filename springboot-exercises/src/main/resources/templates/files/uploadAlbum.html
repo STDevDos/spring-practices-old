@@ -6,14 +6,14 @@
     <title>Save album</title>
 </head>
 <body>
-<form id="formAddAlbum" method="POST" enctype="multipart/form-data">
-    <input type="file" name="photos" accept="image/png, image/jpeg" multiple>
+<form enctype="multipart/form-data" id="formAddAlbum" method="POST">
+    <input accept="image/png, image/jpeg" multiple name="photos" type="file">
 
     <label for="titleAlbum">album title:</label>
-    <input type="text" name="titleAlbum" id="titleAlbum" tabindex="1"/>
+    <input id="titleAlbum" name="titleAlbum" tabindex="1" type="text"/>
 
     <label for="dateAlbum">album date:</label>
-    <input type="text" name="dateAlbum" id="dateAlbum" tabindex="2"/>
+    <input id="dateAlbum" name="dateAlbum" tabindex="2" type="text"/>
 
     <input type="submit" value="Save album">
 

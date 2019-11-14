@@ -7,13 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BeanValidationRestController {
-	
-	@PostMapping("testController")
-	private String testController(@RequestBody User user) {
-		
-		
-		
-		return "success";
-	}
+
+    @PostMapping("testController")
+    private String testController(@RequestBody User user) {
+
+
+        return "success";
+    }
 
 }

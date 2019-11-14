@@ -10,5 +10,5 @@ public class RequestMappingRestController {
 //	@PutMapping
 //	@DeleteMapping
 //	@PatchMapping
-	
+
 }

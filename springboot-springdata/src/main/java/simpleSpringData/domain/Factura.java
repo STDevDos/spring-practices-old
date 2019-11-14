@@ -40,16 +40,16 @@ public class Factura implements Serializable {
         return pk;
     }
 
+    public void setPk(ProductoVendedor pk) {
+        this.pk = pk;
+    }
+
     public Vendedor getVendedor() {
         return this.getPk().getVendedor();
     }
 
     public void setVendedor(Vendedor vendedor) {
         this.getPk().setVendedor(vendedor);
-    }
-
-    public void setPk(ProductoVendedor pk) {
-        this.pk = pk;
     }
 
     public Producto getProducto() {

@@ -1,90 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<parent>
-		<artifactId>initial-examples</artifactId>
-		<groupId>com.froyo.spring</groupId>
-		<version>1.0-SNAPSHOT</version>
-	</parent>
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>initial-examples</artifactId>
+        <groupId>com.froyo.spring</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
 
-	<artifactId>springBootRestApi</artifactId>
+    <artifactId>springBootRestApi</artifactId>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>11</java.version>
-		<maven.compiler.target>11</maven.compiler.target>
-		<maven.compiler.source>11</maven.compiler.source>
-		<junit-plataform.version>5.3.1</junit-plataform.version>
-		<jasypt.version>2.1.2</jasypt.version>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>11</java.version>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <junit-plataform.version>5.3.1</junit-plataform.version>
+        <jasypt.version>2.1.2</jasypt.version>
+    </properties>
 
-	<dependencies>
+    <dependencies>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-		<!-- Encriptar con la libreria jasypt de forma básica -->
-		<dependency>
-			<groupId>com.github.ulisesbocchio</groupId>
-			<artifactId>jasypt-spring-boot-starter</artifactId>
-			<version>${jasypt.version}</version>
-		</dependency>
-		
-		<dependency>
+        <!-- Encriptar con la libreria jasypt de forma básica -->
+        <dependency>
+            <groupId>com.github.ulisesbocchio</groupId>
+            <artifactId>jasypt-spring-boot-starter</artifactId>
+            <version>${jasypt.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.github.ulisesbocchio</groupId>
             <artifactId>jasypt-spring-boot</artifactId>
             <version>${jasypt.version}</version>
         </dependency>
-		
-	</dependencies>
 
-	<build>
-		<plugins>
+    </dependencies>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-			</plugin>
+    <build>
+        <plugins>
 
-			<!-- Start Después de: ng build doble guion env=prod . Se copiaran los 
-				recursos al target de springBoot para que springBoot sea el encargado de 
-				arrancar y hacer funcionar la página realizada en Angular4. -->
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>copy-resources</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/target/classes/static/</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${basedir}/../angular4Inicio/dist</directory>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<!-- End Después de: ng build doble guion env=prod . Se copiaran los recursos 
-				al target de springBoot para que springBoot sea el encargado de arrancar 
-				y hacer funcionar la página realizada en Angular4. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
 
-		</plugins>
-	</build>
+            <!-- Start Después de: ng build doble guion env=prod . Se copiaran los
+                recursos al target de springBoot para que springBoot sea el encargado de
+                arrancar y hacer funcionar la página realizada en Angular4. -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/classes/static/</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/../angular4Inicio/dist</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- End Después de: ng build doble guion env=prod . Se copiaran los recursos
+                al target de springBoot para que springBoot sea el encargado de arrancar
+                y hacer funcionar la página realizada en Angular4. -->
+
+        </plugins>
+    </build>
 
 </project>

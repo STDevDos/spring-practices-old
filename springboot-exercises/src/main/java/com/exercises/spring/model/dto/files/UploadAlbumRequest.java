@@ -13,9 +13,9 @@ import java.time.LocalDate;
 @ToString
 public class UploadAlbumRequest implements Serializable {
 
-	private static final long serialVersionUID = -322061710855948063L;
+    private static final long serialVersionUID = -322061710855948063L;
 
-	private String titleAlbum;
+    private String titleAlbum;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateAlbum;

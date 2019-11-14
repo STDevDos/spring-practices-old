@@ -1,16 +1,15 @@
 package com.froyo.spring;
 
+import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 
 @SpringBootApplication
 @EnableEncryptableProperties
 public class SpringBootJasyptDatasource {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringBootJasyptDatasource.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBootJasyptDatasource.class, args);
+    }
 
 }

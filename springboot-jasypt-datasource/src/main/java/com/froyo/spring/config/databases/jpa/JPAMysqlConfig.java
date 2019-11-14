@@ -1,9 +1,7 @@
 package com.froyo.spring.config.databases.jpa;
 
-import java.util.Properties;
-
-import javax.sql.DataSource;
-
+import com.froyo.spring.model.entity.DomainPackagesJPA;
+import com.froyo.spring.repository.mysql.RepositoryPackageMysql;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -16,8 +14,8 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import com.froyo.spring.model.entity.DomainPackagesJPA;
-import com.froyo.spring.repository.mysql.RepositoryPackageMysql;
+import javax.sql.DataSource;
+import java.util.Properties;
 
 @Configuration
 @EnableJpaRepositories(

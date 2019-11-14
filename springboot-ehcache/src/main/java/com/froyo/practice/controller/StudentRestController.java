@@ -13,13 +13,11 @@ import java.util.Optional;
 @RequestMapping("api/student")
 public class StudentRestController {
 
+    private static final String USERID = "X-USERID";
     @Autowired
     private UserService userService;
-
     @Autowired
     private StudentService studentService;
-
-    private static final String USERID = "X-USERID";
 
     @GetMapping(path = "/evictCache")
     public void evictCache() {

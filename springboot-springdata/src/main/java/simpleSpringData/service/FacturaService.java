@@ -9,9 +9,9 @@ import java.util.Optional;
  * @author froy
  */
 public interface FacturaService {
-    public void save(Factura Vendedor);
+    void save(Factura Vendedor);
 
-    public Optional<Factura> findOne(long rid);
+    Optional<Factura> findOne(long rid);
 
-    public List<Factura> findAll();
+    List<Factura> findAll();
 }
