@@ -1,4 +1,4 @@
-# springBootH2Database
+# springboot-h2database
 Simple H2 Database example
 
 Realizando un ejemplo con h2 DataBase :: Request Mappings (GET/POST) ::

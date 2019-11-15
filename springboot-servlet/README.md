@@ -1,4 +1,4 @@
-# exampleSpringBootServlet
+# springboot-servlet
 
 - Realizando un ejemplo con @ServletComponentScan
 :: Request Mappings (GET/POST) ::

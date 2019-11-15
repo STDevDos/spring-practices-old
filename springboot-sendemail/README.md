@@ -1,2 +1,2 @@
-# springBootSendEmail
+# springboot-sendemail
 

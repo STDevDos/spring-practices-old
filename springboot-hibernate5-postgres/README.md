@@ -1,4 +1,4 @@
-# springHibernate5PostgresSQL
+# springboot-hibernate5-postgres
 https://springhibernate5postgresql.herokuapp.com/insertPersona/{nombre}/{rfc}
 https://springhibernate5postgresql.herokuapp.com/selectPersonaHQL
 https://springhibernate5postgresql.herokuapp.com/selectPersonaCriteria          (id 10)

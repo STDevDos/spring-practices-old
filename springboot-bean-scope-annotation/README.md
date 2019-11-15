@@ -1,4 +1,4 @@
-# spring-bean-scope-annotation
+# springboot-bean-scope-annotation
 
 https://spring-bean-scope-annotation.herokuapp.com/address
 

@@ -1,2 +1,2 @@
 # initial-examples
-Initial
+Initial commits examples

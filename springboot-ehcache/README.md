@@ -1,2 +1,2 @@
-# spring-boot-j11-web
+# springboot-ehcache
 eclipse profile: local arguments: --spring.profiles.active=local

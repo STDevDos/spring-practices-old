@@ -1,4 +1,4 @@
-# Spring Web Services (SOAP) using Spring Boot example
+# springboot-soap
 
 - `http://localhost:8091/soapWS` - request xml is under `src/main/resource/user-request.xml`
 

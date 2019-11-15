@@ -1,4 +1,4 @@
-# SimpleRestClient
+# springboot-restclient
 Éste proyecto se ejecuta en CommandLineRunner (las respuestas son lanzadas a la consola)
 
 Objetivo: Realizar una petición @RestController para obtener la información a procesar
