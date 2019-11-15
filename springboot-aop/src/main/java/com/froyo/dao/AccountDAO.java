@@ -1,4 +1,4 @@
-package com.aspectdemo.fd.dao;
+package com.froyo.dao;
 
 import org.springframework.stereotype.Component;
 
@@ -6,12 +6,10 @@ import org.springframework.stereotype.Component;
  * @author froy
  */
 @Component
-public class MembershipDAO {
+public class AccountDAO {
 
     public void addAccount() {
-
         System.out.println(getClass() + " : DB :: ADDING AN ACCOUNT ");
-
     }
 
 }

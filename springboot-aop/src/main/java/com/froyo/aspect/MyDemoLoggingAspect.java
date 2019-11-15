@@ -1,4 +1,4 @@
-package com.aspectdemo.fd.aspect;
+package com.froyo.aspect;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -16,25 +16,27 @@ public class MyDemoLoggingAspect {
 
     //let's start with an @Before advice.
 
-    @Before("execution(public void com.aspectdemo.fd.dao.AccountDAO.addAccount())")
+    @Before("execution(public void com.froyo.dao.AccountDAO.addAccount())")
     public void beforeAddAccountAdvice() {
         System.out.println(" ====>> Executing before addAccount() ");
     }
 
     /**
-     * Cualquier método que inicie con add*
+     * each method to start with add*
      */
     @Before("execution(public void add*())")
     public void beforeAddAdvice() {
         System.out.println(" ====>> Executing before add*() ");
     }
 
-    /**
-     * Pointcut Expression Examples
-     */
-    /*@Before("execution(* * processCreditCard*())")*/
-    public void beforeProcessCreditCard() {
-        System.out.println(" ====>> Executing before processCreditCard() ");
-    }
+// --Commented out by Inspection START (15/11/2019 03:23 a. m.):
+//    /**
+//     * Pointcut Expression Examples
+//     */
+//    @Before("execution(* * processCreditCard*())")
+//    public void beforeProcessCreditCard() {
+//        System.out.println(" ====>> Executing before processCreditCard() ");
+//    }
+// --Commented out by Inspection STOP (15/11/2019 03:23 a. m.)
 
 }

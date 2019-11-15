@@ -1,7 +1,7 @@
-package com.aspectdemo.fd;
+package com.froyo;
 
-import com.aspectdemo.fd.dao.AccountDAO;
-import com.aspectdemo.fd.dao.MembershipDAO;
+import com.froyo.dao.AccountDAO;
+import com.froyo.dao.MembershipDAO;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
