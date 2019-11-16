@@ -1,11 +1,12 @@
-package com.fd.cron;
+package com.fd.cron.service.impl;
 
+import com.fd.cron.model.CustomerInfo;
+import com.fd.cron.model.ProductOrder;
+import com.fd.cron.service.FacturaService;
+import com.fd.cron.service.MailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * @author Froy
- */
 @Service("facturaServiceImpl")
 public class FacturaServiceImpl implements FacturaService {
 

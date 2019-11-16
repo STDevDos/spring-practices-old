@@ -8,16 +8,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
- * Initial Application
  *
- * @author Froy
- * <p>
  * https://www.mkyong.com/spring-boot/spring-boot-non-web-application-example/
  * CommandLineRunner:In Spring Boot, to create a non-web application, implements CommandLineRunner and override the run method.
  */
 @SpringBootApplication
 @EnableScheduling
-//Cannot determine embedded database driver class for database type NONE
 public class SpringCronApplication {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SpringCronApplication.class);
@@ -30,9 +26,9 @@ public class SpringCronApplication {
         SpringApplication.run(SpringCronApplication.class, args);
     }
 
-    public void run() {
-        LOGGER.info("SpringCronApplication::run");
-        cronProcess.process(); /* commented for run spring-batch (BatchCongiguration) */
+    public void run(String... args) {
+        LOGGER.info("SpringCronApplication::run " + args[0]);
+        cronProcess.process();
     }
 
 }

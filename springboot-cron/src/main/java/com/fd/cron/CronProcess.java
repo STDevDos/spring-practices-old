@@ -1,13 +1,11 @@
 package com.fd.cron;
 
+import com.fd.cron.service.FacturaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-/**
- * @author Froy
- */
 @Service
 public class CronProcess {
 

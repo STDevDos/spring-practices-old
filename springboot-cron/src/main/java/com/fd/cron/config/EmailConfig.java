@@ -1,4 +1,4 @@
-package com.fd.cron;
+package com.fd.cron.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,6 @@ import org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean;
 import java.util.Properties;
 
 /**
- * @author Froy
  * http://stackoverflow.com/questions/12743846/unable-to-send-an-email-using-smtp-getting-javax-mail-messagingexception-could
  * https://www.google.com/settings/security/lesssecureapps
  * <p>
@@ -48,10 +47,11 @@ public class EmailConfig {
     /*
      * FreeMarker configuration.
      */
-    @Bean
-    public FreeMarkerConfigurationFactoryBean getFreeMarkerConfiguration() {
+    @Bean("retrieveFreeMarkerConfigurationTemplate")
+    public FreeMarkerConfigurationFactoryBean retrieveFreeMarkerConfigurationTemplate() {
         FreeMarkerConfigurationFactoryBean bean = new FreeMarkerConfigurationFactoryBean();
         bean.setTemplateLoaderPath("classpath:/META-INF/fmtemplates");
+        bean.setDefaultEncoding("UTF-8"); // Default encoding of the template files
         return bean;
     }
 

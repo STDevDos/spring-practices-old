@@ -1,8 +1,5 @@
-package com.fd.cron;
+package com.fd.cron.service;
 
-/**
- * @author Froy
- */
 public interface FacturaService {
 
     /**
