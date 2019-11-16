@@ -10,7 +10,6 @@ import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 
-import javax.mail.internet.MimeMessage;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,46 +20,44 @@ import java.util.Map;
 public class MailServiceImpl implements MailService {
 
     private static final String FM_MAILTEMPLATE = "fm_mailTemplate.ftl";
+
     @Autowired
     private JavaMailSender mailSender;
+
     @Autowired
     private Configuration freemarkerConfiguration;
 
     private MimeMessagePreparator getMessagePreparator(final ProductOrder order) {
 
-        MimeMessagePreparator preparator = new MimeMessagePreparator() {
+        return mimeMessage -> {
+            MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
 
-            public void prepare(MimeMessage mimeMessage) throws Exception {
-                MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
+            helper.setSubject("DEMOAPP Order :: " + order.getOrderId());
+            helper.setFrom("aspringmvc@gmail.com");
+            helper.setReplyTo("aspringmvc@gmail.com");
+            helper.setTo(order.getCustomerInfo().getEmail());
 
-                helper.setSubject("DEMOAPP Order :: " + order.getOrderId());
-                helper.setFrom("aspringmvc@gmail.com");
-                helper.setReplyTo("aspringmvc@gmail.com");
-                helper.setTo(order.getCustomerInfo().getEmail());
+            Map<String, Object> model = new HashMap<>();
+            model.put("order", order);
 
-                Map<String, Object> model = new HashMap<String, Object>();
-                model.put("order", order);
+            String text = geFreeMarkerTemplateContent(model);
+            System.out.println("Template content : " + text);
 
-                String text = geFreeMarkerTemplateContent(model);
-                System.out.println("Template content : " + text);
-
-                // use the true flag to indicate you need a multipart message
+            // use the true flag to indicate you need a multipart message
 //            	helper.setText(text, true);
-                helper.setText("<b>hola</b>", true);
+            helper.setText("<b>hola</b>", true);
 
-                //Additionally, let's add a resource as an attachment as well.
-                helper.addAttachment("cutie.png", new ClassPathResource("linux-icon.png"));
+            //Additionally, let's add a resource as an attachment as well.
+            helper.addAttachment("cutie.png", new ClassPathResource("linux-icon.png"));
 
-                System.out.println(order.getCustomerInfo().getEmail());
-                System.out.println(helper);
+            System.out.println(order.getCustomerInfo().getEmail());
+            System.out.println(helper);
 
-            }
         };
-        return preparator;
     }
 
-    public String geFreeMarkerTemplateContent(Map<String, Object> model) {
-        StringBuffer content = new StringBuffer();
+    private String geFreeMarkerTemplateContent(Map<String, Object> model) {
+        StringBuilder content = new StringBuilder();
         try {
             content.append(FreeMarkerTemplateUtils.processTemplateIntoString(freemarkerConfiguration.getTemplate(FM_MAILTEMPLATE), model));
             return content.toString();

@@ -25,17 +25,12 @@ public class SpringCronApplication {
     @Autowired
     private CronProcess cronProcess;
 
-    /**
-     * Main method.
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         LOGGER.info("SpringCronApplication::main");
         SpringApplication.run(SpringCronApplication.class, args);
     }
 
-    public void run(String... args) {
+    public void run() {
         LOGGER.info("SpringCronApplication::run");
         cronProcess.process(); /* commented for run spring-batch (BatchCongiguration) */
     }

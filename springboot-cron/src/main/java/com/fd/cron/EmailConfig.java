@@ -1,7 +1,6 @@
 package com.fd.cron;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
@@ -20,7 +19,6 @@ import java.util.Properties;
  * https://www.google.com/settings/security/lesssecureapps
  */
 @Configuration
-@ComponentScan(basePackages = "com.fd.admin")
 public class EmailConfig {
 
     //Put Other Application configuration here.

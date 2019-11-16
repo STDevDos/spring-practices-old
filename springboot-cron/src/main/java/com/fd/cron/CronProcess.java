@@ -16,8 +16,8 @@ public class CronProcess {
     private FacturaService facturaService;
 
     /**
-     * @see http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/support/CronSequenceGenerator.html
-     * @see http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/tutorial-lesson-06
+     * //docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/support/CronSequenceGenerator.html
+     * //www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/tutorial-lesson-06
      * 0 0 0 * * ? = [second minute hour day month year] = Runs all years of all months of all days at 12:00 am
      * <p>
      * Examples:

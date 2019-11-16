@@ -3,7 +3,7 @@ package com.fd.cron;
 /**
  * @author Froy
  */
-public class ProductOrder {
+class ProductOrder {
 
     private String orderId;
     private String productName;

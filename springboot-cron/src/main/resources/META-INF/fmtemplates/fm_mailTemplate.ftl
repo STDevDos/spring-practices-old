@@ -1,4 +1,4 @@
-<html>
+<html lang="en-us">
 <body>
 <h3>Dear ${order.customerInfo.name}, thank you for placing order.</h3>
 <div>
