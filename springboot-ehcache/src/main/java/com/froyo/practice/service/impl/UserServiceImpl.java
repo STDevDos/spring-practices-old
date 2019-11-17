@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
         userDetails001.setFirstName("Matt");
         userDetails001.setLastName("Murdock");
         userDetails001.setLogin("mmurdock");
-        userDetails001.setUserId(001);
+        userDetails001.setUserId(1);
         userDetails001.setUserType("INTERNAL");
 
         UserDetails userDetails002 = new UserDetails();
@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
         userDetails002.setFirstName("Jeff");
         userDetails002.setLastName("Render");
         userDetails002.setLogin("jrender");
-        userDetails002.setUserId(002);
+        userDetails002.setUserId(2);
         userDetails002.setUserType("EXTERNAL");
 
         UserDetails userDetails003 = new UserDetails();
@@ -56,7 +56,7 @@ public class UserServiceImpl implements UserService {
         userDetails003.setFirstName("Roger");
         userDetails003.setLastName("Murdock");
         userDetails003.setLogin("rmurdock");
-        userDetails003.setUserId(003);
+        userDetails003.setUserId(3);
         userDetails003.setUserType("INTERNAL");
 
         UserDetails userDetails004 = new UserDetails();
@@ -64,7 +64,7 @@ public class UserServiceImpl implements UserService {
         userDetails004.setFirstName("Jorge");
         userDetails004.setLastName("Alfaro");
         userDetails004.setLogin("jalfaro");
-        userDetails004.setUserId(004);
+        userDetails004.setUserId(4);
         userDetails004.setUserType(null);
 
         listUserDetails.add(userDetails001);
