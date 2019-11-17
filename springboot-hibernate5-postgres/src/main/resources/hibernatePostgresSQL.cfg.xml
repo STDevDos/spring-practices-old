@@ -33,7 +33,7 @@
         <property name="show_sql">true</property>
 
         <!-- Usar mapping en base a anotaciones. -->
-        <mapping class="com.fd.pesistence.entity.Persona"/>
+        <mapping class="com.froyo.pesistence.entity.Persona"/>
 
         <!-- http://www.journaldev.com/2924/hibernate-one-to-many-mapping-annotation -->
         <!--		<mapping class="com.fd.admin.model.entity.PersonListDetailsEntity"/> -->

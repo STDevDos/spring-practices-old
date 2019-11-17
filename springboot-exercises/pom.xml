@@ -80,13 +80,6 @@
             <artifactId>HikariCP</artifactId>
         </dependency>
 
-        <!-- this one is need for Hikari Configuration, because we will use prefix configuration -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-
         <!-- Start Hibernate 5.x ORM -->
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -141,6 +134,13 @@
             <version>${junit-plataform.version}</version>
             <scope>test</scope> <!-- test folder -->
         </dependency>
+        <!-- Parameterized Tests -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>5.5.2</version>
+            <scope>test</scope>
+        </dependency>
         
         <!-- Util @Data,@Getter anotaciones para pojos -->
         <dependency>
@@ -148,6 +148,18 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <!-- Cannot resolve configuration property 'h2.datasource.jdbc-url' yml
+        toma como referencia las clases que tengan @ConfigurationProperties para
+        procesar las propiedades custom que esten dentro del yml o .properties file.
+        -->
+        <!-- this one is need for Hikari Configuration, because we will use prefix configuration -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
 
     </dependencies>
 

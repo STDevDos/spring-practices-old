@@ -17,6 +17,7 @@ import java.util.Locale;
  * <p>
  * https://www.boraji.com/java-currency-class-example
  */
+@SuppressWarnings("unused")
 class MoneySerializer extends JsonSerializer<BigDecimal> {
     @Override
     public void serialize(BigDecimal value, JsonGenerator jgen, SerializerProvider provider) throws IOException {

@@ -3,10 +3,17 @@ package com.froyo.spring.employee.services;
 import com.froyo.spring.employee.model.Employee;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class EmployeePredicatesTest {
 
@@ -23,6 +30,7 @@ class EmployeePredicatesTest {
     }
 
     @Test
+    @DisplayName("Test : Adulto masculino mayor de edad.")
     void isAdultMale() {
 
         boolean result = EmployeePredicates.isAdultMale().test(employee);
@@ -88,5 +96,18 @@ class EmployeePredicatesTest {
         result = EmployeePredicates.isAgeMoreThan(24).test(employee);
         assertTrue(result);
 
+    }
+
+
+    @ParameterizedTest(name = "#{index} - Test with {0} and {1}")
+    @MethodSource("argumentProvider")
+    void test_method_multi(String str, int length) {
+    }
+
+    static Stream<Arguments> argumentProvider() {
+        return Stream.of(
+                arguments("abc", 3),
+                arguments("lemon", 2)
+        );
     }
 }
