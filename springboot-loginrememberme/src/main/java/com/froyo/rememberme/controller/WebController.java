@@ -12,6 +12,7 @@ public class WebController {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    @SuppressWarnings("SameReturnValue")
     @RequestMapping(value = "/createTable", method = RequestMethod.GET)
     public String createTable() {
         jdbcTemplate.execute("create table persistent_logins (\r\n" +
@@ -23,11 +24,13 @@ public class WebController {
         return "home2";
     }
 
+    @SuppressWarnings("SameReturnValue")
     @RequestMapping(value = {"/"})
     public String home() {
         return "home";
     }
 
+    @SuppressWarnings("SameReturnValue")
     @RequestMapping(value = {"/login"})
     public String login() {
         return "login";

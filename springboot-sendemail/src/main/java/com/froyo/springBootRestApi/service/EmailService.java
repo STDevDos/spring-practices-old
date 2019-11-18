@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import javax.mail.Message;
 import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 import java.io.File;
 
 @Service("emailService")
@@ -44,17 +43,15 @@ public class EmailService {
     }
 
     public void sendMailWithAttachment(String to, String subject, String body, String fileToAttach) {
-        MimeMessagePreparator preparator = new MimeMessagePreparator() {
-            public void prepare(MimeMessage mimeMessage) throws Exception {
-                mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
-                mimeMessage.setFrom(new InternetAddress("from@gmail.com"));
-                mimeMessage.setSubject(subject);
-                mimeMessage.setText(body);
+        MimeMessagePreparator preparator = mimeMessage -> {
+            mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            mimeMessage.setFrom(new InternetAddress("from@gmail.com"));
+            mimeMessage.setSubject(subject);
+            mimeMessage.setText(body);
 
-                FileSystemResource file = new FileSystemResource(new File(fileToAttach));
-                MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
-                helper.addAttachment("logo.jpg", file);
-            }
+            FileSystemResource file = new FileSystemResource(new File(fileToAttach));
+            MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
+            helper.addAttachment("logo.jpg", file);
         };
 
         try {
@@ -66,19 +63,17 @@ public class EmailService {
     }
 
     public void sendMailWithInlineResources(String to, String subject, String fileToAttach) {
-        MimeMessagePreparator preparator = new MimeMessagePreparator() {
-            public void prepare(MimeMessage mimeMessage) throws Exception {
-                mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
-                mimeMessage.setFrom(new InternetAddress("from@gmail.com"));
-                mimeMessage.setSubject(subject);
+        MimeMessagePreparator preparator = mimeMessage -> {
+            mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            mimeMessage.setFrom(new InternetAddress("from@gmail.com"));
+            mimeMessage.setSubject(subject);
 
-                MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
+            MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
 
-                helper.setText("<html><body><img src='cid:identifier1234'></body></html>", true);
+            helper.setText("<html><body><img src='cid:identifier1234'></body></html>", true);
 
-                FileSystemResource res = new FileSystemResource(new File(fileToAttach));
-                helper.addInline("identifier1234", res);
-            }
+            FileSystemResource res = new FileSystemResource(new File(fileToAttach));
+            helper.addInline("identifier1234", res);
         };
 
         try {

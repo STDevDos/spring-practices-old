@@ -13,6 +13,7 @@ public class SendEmailRestController {
     @Autowired
     private EmailService emailService;
 
+    @SuppressWarnings("SameReturnValue")
     @GetMapping("/sendEmail")
     private String sendEmail() {
         emailService.sendMail("from@gmail.com", "Hi", "Ho ho ho");

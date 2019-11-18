@@ -44,9 +44,9 @@ import javax.xml.bind.annotation.XmlType;
 public class User {
 
     @XmlElement(required = true)
-    protected String name;
-    protected int empId;
-    protected double salary;
+    private String name;
+    private int empId;
+    private double salary;
 
     /**
      * Obtiene el valor de la propiedad name.

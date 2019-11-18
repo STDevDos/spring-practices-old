@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.*;
 public class GetUserRequest {
 
     @XmlElement(required = true)
-    protected String name;
+    private String name;
 
     /**
      * Obtiene el valor de la propiedad name.

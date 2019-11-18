@@ -9,12 +9,13 @@ import org.springframework.context.annotation.Profile;
 @EnableConfigurationProperties(DBConfiguration.class)
 public class DBConnectionConfiguration {
 
-    private DBConfiguration dbConfiguration;
+    private final DBConfiguration dbConfiguration;
 
     public DBConnectionConfiguration(DBConfiguration dbConfiguration) {
         this.dbConfiguration = dbConfiguration;
     }
 
+    @SuppressWarnings("SameReturnValue")
     @Profile("dev")
     @Bean
     public String devDBCcnnection() {
@@ -26,6 +27,7 @@ public class DBConnectionConfiguration {
         return "DB Connection for Dev";
     }
 
+    @SuppressWarnings("SameReturnValue")
     @Profile("test")
     @Bean
     public String devTestCcnnection() {
@@ -37,6 +39,7 @@ public class DBConnectionConfiguration {
         return "DB Connection for Test";
     }
 
+    @SuppressWarnings("SameReturnValue")
     @Profile("prod")
     @Bean
     public String devProdCcnnection() {

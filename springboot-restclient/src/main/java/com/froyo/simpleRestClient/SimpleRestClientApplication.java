@@ -15,11 +15,6 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class SimpleRestClientApplication implements CommandLineRunner {
 
-    /**
-     * Método principal de iniciación de la aplicación.
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(SimpleRestClientApplication.class);
         //app.setWebEnvironment(false); //Establece si ésta aplicación se está ejecutando en un enterno web
@@ -29,17 +24,17 @@ public class SimpleRestClientApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... argsRun) throws Exception {
+    public void run(String... argsRun) {
 
-        /**
-         * Una forma de obtener el response de otro proyecto es utilizando RestTemplate.
-         * El ejemplo se esta corriendo una aplicación en el puerto 8080 y ese proyecto
-         * tiene un Request @GetMapping("retrieveCustomer")
-         * :: Método getForObject::
-         *
-         * Parámetro 1 : el url del request.
-         * Parámetro 2 : el tipo de objeto que regresará.
-         *
+        /*
+          Una forma de obtener el response de otro proyecto es utilizando RestTemplate.
+          El ejemplo se esta corriendo una aplicación en el puerto 8080 y ese proyecto
+          tiene un Request @GetMapping("retrieveCustomer")
+          :: Método getForObject::
+
+          Parámetro 1 : el url del request.
+          Parámetro 2 : el tipo de objeto que regresará.
+
          */
 
         RestTemplate plantilla = new RestTemplate();

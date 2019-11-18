@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.*;
 public class GetUserResponse {
 
     @XmlElement(required = true)
-    protected User user;
+    private User user;
 
     /**
      * Obtiene el valor de la propiedad user.

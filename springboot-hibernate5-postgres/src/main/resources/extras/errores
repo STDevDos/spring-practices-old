@@ -1,8 +1,0 @@
-# org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host // SSL false
-https://stackoverflow.com/questions/25641047/org-postgresql-util-psqlexception-fatal-no-pg-hba-conf-entry-for-host
-
-# org.hibernate.TransactionException: Transaction not successfully started
-comenzar la transaccion con: session.beginTransaction();                    ;)
-
-# org.hibernate.hql.internal.ast.QuerySyntaxException: table is not mapped
-Query query = session.createQuery(" from Persona "); // from [nombre del POJO con CaSe]

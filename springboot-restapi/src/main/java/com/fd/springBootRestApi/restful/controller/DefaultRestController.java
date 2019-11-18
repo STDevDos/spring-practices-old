@@ -8,21 +8,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/home")
 public class DefaultRestController {
 
+    @SuppressWarnings("SameReturnValue")
     @RequestMapping()
     public String home() {
         return "This is a default method for the RestController.";
     }
 
+    @SuppressWarnings("SameReturnValue")
     @RequestMapping("/*")
     public String homeAll() {
         return "homeAll";
     }
 
+    @SuppressWarnings("SameReturnValue")
     @GetMapping("/homePage1")
     public String homePage1() {
         return "homePage1";
     }
 
+    @SuppressWarnings("SameReturnValue")
     @RequestMapping({
             "/homePage2",
             "/homePage3"

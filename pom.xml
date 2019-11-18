@@ -31,7 +31,6 @@
         <module>springboot-exercises</module>
         <module>springboot-fileupload</module>
         <module>springboot-h2database</module>
-        <module>springboot-hibernate5-postgres</module>
         <module>springboot-jasypt-datasource</module>
         <module>springboot-loginrememberme</module>
         <module>springboot-profiles</module>
