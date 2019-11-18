@@ -40,7 +40,6 @@
         <module>springboot-sendemail</module>
         <module>springboot-servlet</module>
         <module>springboot-soap</module>
-        <module>springboot-springdata</module>
     </modules>
 
     <properties>

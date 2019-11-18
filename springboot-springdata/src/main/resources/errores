@@ -1,5 +1,0 @@
-#org.hibernate.MappingException: Could not determine type for
-https://stackoverflow.com/questions/3774198/org-hibernate-mappingexception-could-not-determine-type-for-java-util-list-at/44055520
-
-#Exception in thread "main" java.lang.StackOverflowError (toString())
-https://stackoverflow.com/questions/23973347/jpa-java-lang-stackoverflowerror-on-adding-tostring-method-in-entity-classes
