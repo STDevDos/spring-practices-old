@@ -1,6 +1,6 @@
 package com.froyo.spring.model.dto.files;
 
-import com.froyo.spring.model.util.messages.AbstractResponse;
+import com.froyo.messages.AbstractResponse;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;

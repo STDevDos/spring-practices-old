@@ -1,10 +1,10 @@
 package com.froyo.spring.repository.impl;
 
+import com.froyo.messages.MessagePairUtils;
+import com.froyo.messages.codes.CurrencyMessageCode;
 import com.froyo.spring.model.dto.CurrencyRequest;
 import com.froyo.spring.model.dto.CurrencyResponse;
 import com.froyo.spring.repository.CurrencyH2Repository;
-import com.froyo.spring.util.messages.MessagePairUtils;
-import com.froyo.spring.util.messages.codes.CurrencyMessageCode;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

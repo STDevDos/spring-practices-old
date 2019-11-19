@@ -1,6 +1,6 @@
 package com.froyo.spring.model.dto;
 
-import com.froyo.spring.util.messages.AbstractResponse;
+import com.froyo.messages.AbstractResponse;
 import lombok.Data;
 
 @Data

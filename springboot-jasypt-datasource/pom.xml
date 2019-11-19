@@ -119,6 +119,12 @@
             <artifactId>spring-aspects</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.froyo</groupId>
+            <artifactId>java-mvn-messagesresponse</artifactId>
+            <version>1.0-snapshot</version>
+        </dependency>
+
     </dependencies>
 
     <build>

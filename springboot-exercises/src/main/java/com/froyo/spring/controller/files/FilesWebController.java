@@ -1,12 +1,12 @@
 package com.froyo.spring.controller.files;
 
+import com.froyo.messages.MessagePair;
+import com.froyo.messages.MessagePairTypeCode;
 import com.froyo.spring.model.dto.files.RestTemplateUploadAlbumRequest;
 import com.froyo.spring.model.dto.files.UploadAlbumRequest;
 import com.froyo.spring.model.dto.files.UploadAlbumResponse;
 import com.froyo.spring.model.util.files.MultipartFileData;
 import com.froyo.spring.model.util.files.MultipartFileUtil;
-import com.froyo.spring.model.util.messages.MessagePair;
-import com.froyo.spring.model.util.messages.MessagePairTypeCode;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -20,9 +20,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.froyo.spring.model.messagescodes.FilesMessageCode.FILE_1101;
-import static com.froyo.spring.model.messagescodes.FilesMessageCode.FILE_1102;
-import static com.froyo.spring.model.util.messages.MessagePairUtils.messagePair;
+import static com.froyo.messages.MessagePairUtils.messagePair;
+import static com.froyo.messages.codes.FilesMessageCode.FILE_1101;
+import static com.froyo.messages.codes.FilesMessageCode.FILE_1102;
 
 @Log4j2
 @Controller

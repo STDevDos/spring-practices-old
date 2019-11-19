@@ -34,7 +34,7 @@ public class JPAPostgresConfig {
         final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(datasourcePostgres);
         entityManagerFactoryBean.setPackagesToScan(DomainPackagesJPA.class.getPackageName());
-        entityManagerFactoryBean.setJpaVendorAdapter(this.vendorAdaptor());
+        //entityManagerFactoryBean.setJpaVendorAdapter(this.vendorAdaptor());
 
         //entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
         //entityManagerFactoryBean.setPersistenceUnitName("postgres");

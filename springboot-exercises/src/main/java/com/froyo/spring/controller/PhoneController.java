@@ -27,6 +27,7 @@ public class PhoneController {
     @GetMapping("/phones/{id}")
     public ResponseEntity<PhoneEntity> getPhoneById(@PathVariable(value = "id") Long phoneId)
             throws Exception {
+
         PhoneEntity phone = phoneRepository.findById(phoneId)
                 .orElseThrow(() -> new Exception("Phone " + phoneId + " not found"));
         return ResponseEntity.ok().body(phone);
