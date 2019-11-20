@@ -2,11 +2,11 @@ package com.froyo;
 
 import com.froyo.inout.PersonaRequest;
 import com.froyo.inout.PersonaResponse;
+import com.froyo.mapper.PersonaMapper;
 import com.froyo.messages.MessagePair;
 import com.froyo.messages.MessagePairTypeCode;
+import com.froyo.model.Persona;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -17,6 +17,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+@RequestMapping("/persona")
 public class HomeRestController {
 
     @Autowired
@@ -27,11 +28,11 @@ public class HomeRestController {
      */
     @PostConstruct
     public void creatTablaPersona() {
-        jdbcTemplate.execute("create table persona(id SERIAL,name VARCHAR(255),age VARCHAR(255) )");
+        jdbcTemplate.execute("create table persona(id SERIAL,name varchar(255),age int )");
     }
 
-    @PostMapping(value = "/persona")
-    public ResponseEntity altaPersona(@Valid @RequestBody PersonaRequest personaRequest, BindingResult bindingResult) {
+    @PostMapping(value = "/altaPersona")
+    public PersonaResponse altaPersona(@Valid @RequestBody PersonaRequest personaRequest, BindingResult bindingResult) {
 
         PersonaResponse personaResponse = new PersonaResponse();
 
@@ -39,67 +40,74 @@ public class HomeRestController {
             for (ObjectError objectError : bindingResult.getAllErrors()) {
                 personaResponse.addMessagePair(new MessagePair(objectError.getCode(), objectError.getDefaultMessage(), MessagePairTypeCode.ERROR));
             }
-            return new ResponseEntity<>(personaResponse, HttpStatus.CONFLICT);
+            return personaResponse;
         }
 
-        List<Object> params = List.of(personaRequest.getId(), personaRequest.getName(), personaRequest.getAge());
-        StringBuilder sbQuery = new StringBuilder()
-                .append("insert into persona(id,name,age) VALUES ")
-                .append("(?,?,?)");
 
-
-        jdbcTemplate.update(sbQuery.toString(), params);
+        String sbQuery = "INSERT INTO persona(name,age) VALUES " +
+                "(?,?)";
+        jdbcTemplate.update(sbQuery, personaRequest.getName(), personaRequest.getAge());
         personaResponse.addMessagePair(new MessagePair(null, "OK", MessagePairTypeCode.SUCCESS));
 
-        return new ResponseEntity<>(personaResponse, HttpStatus.OK);
+        return personaResponse;
 
     }
 
-    @GetMapping("/persona/{idPersona}")
-    public ResponseEntity obtenerPersonaPorId(@PathVariable("idPersona") Long idPersona) {
+    @GetMapping("/obtenerPersonaPorId/{idPersona}")
+    public PersonaResponse obtenerPersonaPorId(@PathVariable("idPersona") Long idPersona) {
+
+        String query = "SELECT id,name,age FROM persona WHERE id = ? ";
+
+        List<Persona> personas = jdbcTemplate.query(query, List.of(idPersona).toArray(), new PersonaMapper());
+
+        PersonaResponse personaResponse = new PersonaResponse();
+        personaResponse.setPersonas(personas);
+
+        personaResponse.addMessagePair(new MessagePair(null, "OK", MessagePairTypeCode.SUCCESS));
+
+        return personaResponse;
+    }
+
+    @PatchMapping("/editPersonaName")
+    public PersonaResponse editPersonaName(@RequestBody PersonaRequest personaRequest, BindingResult bindingResult) {
+
+
+        String sbQuery = "UPDATE persona SET name = ? WHERE id = ? ";
+        jdbcTemplate.update(sbQuery, personaRequest.getName(), personaRequest.getId());
 
         PersonaResponse personaResponse = new PersonaResponse();
         personaResponse.addMessagePair(new MessagePair(null, "OK", MessagePairTypeCode.SUCCESS));
 
-        //jdbcTemplate.queryForObject()
+        return personaResponse;
 
-        return new ResponseEntity<>(personaResponse, HttpStatus.OK);
     }
 
-    @PatchMapping("/persona/{idPersona}/clientes/{idCliente}")
-    public ResponseEntity editarDatosClienteEmpresa(@Valid @RequestBody PersonaRequest personaRequest, //
-                                                    @PathVariable("idPersona") int idEmpresa, //
-                                                    @PathVariable("idCliente") int idCliente, //
-                                                    BindingResult bindingResult) { //
+    @PutMapping(value = "/editPersona")
+    public PersonaResponse editPersona(@RequestBody PersonaRequest personaRequest, BindingResult bindingResult) {
+
+
+        String sbQuery = "UPDATE persona SET name = ?, age = ? WHERE id = ? ";
+        jdbcTemplate.update(sbQuery, personaRequest.getName(), personaRequest.getAge(), personaRequest.getId());
 
         PersonaResponse personaResponse = new PersonaResponse();
-
-        if (bindingResult.hasErrors()) {
-            for (ObjectError objectError : bindingResult.getAllErrors()) {
-                personaResponse.addMessagePair(new MessagePair(objectError.getCode(), objectError.getDefaultMessage(), MessagePairTypeCode.ERROR));
-            }
-            return new ResponseEntity<>(personaResponse, HttpStatus.CONFLICT);
-        }
-
-
         personaResponse.addMessagePair(new MessagePair(null, "OK", MessagePairTypeCode.SUCCESS));
 
-        //jdbcTemplate.queryForObject()
-
-        return new ResponseEntity<>(personaResponse, HttpStatus.OK);
+        return personaResponse;
 
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<?> updateBazz(
-            @PathVariable String id,
-            @RequestParam("name") String name) {
-        return new ResponseEntity<>(new Bazz(id, name), HttpStatus.OK);
-    }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteBazz(@PathVariable String id) {
-        return new ResponseEntity<>(new Bazz(id), HttpStatus.OK);
+    @DeleteMapping(value = "/deletePersona")
+    public PersonaResponse deletePersona(@RequestBody PersonaRequest personaRequest, BindingResult bindingResult) {
+
+        String query = "DELETE FROM persona WHERE id = ? ";
+
+        jdbcTemplate.update(query, personaRequest.getId());
+
+        PersonaResponse personaResponse = new PersonaResponse();
+        personaResponse.addMessagePair(new MessagePair(null, "OK", MessagePairTypeCode.SUCCESS));
+
+        return personaResponse;
     }
 
 }
