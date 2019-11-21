@@ -1,4 +1,4 @@
-package com.froyo.springFileUpload.model;
+package com.froyo.spring.model;
 
 import lombok.Data;
 

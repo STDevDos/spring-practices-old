@@ -29,7 +29,6 @@
         <module>springboot-cron</module>
         <module>springboot-ehcache</module>
         <module>springboot-exercises</module>
-        <module>springboot-fileupload</module>
         <module>springboot-h2database</module>
         <module>springboot-jasypt-datasource</module>
         <module>springboot-loginrememberme</module>

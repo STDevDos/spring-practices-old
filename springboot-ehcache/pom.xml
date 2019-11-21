@@ -44,7 +44,7 @@
             <!-- <version>2.10.6</version> -->
         </dependency>
 
-        <!-- Util @Data,@Getter anotaciones para pojos -->
+        <!-- Utility dependencies -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

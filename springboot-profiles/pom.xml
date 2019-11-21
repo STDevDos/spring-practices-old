@@ -43,7 +43,7 @@
             <artifactId>validation-api</artifactId>
         </dependency>
 
-        <!-- Util @Data,@Getter anotaciones para pojos -->
+        <!-- Utility dependencies -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
