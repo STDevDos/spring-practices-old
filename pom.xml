@@ -38,6 +38,7 @@
         <module>springboot-sendemail</module>
         <module>springboot-servlet</module>
         <module>springboot-soap</module>
+        <module>springboot-customvalidations</module>
     </modules>
 
     <properties>
