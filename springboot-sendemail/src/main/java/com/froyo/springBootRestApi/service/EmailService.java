@@ -1,5 +1,6 @@
 package com.froyo.springBootRestApi.service;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.MailException;
@@ -13,6 +14,7 @@ import javax.mail.Message;
 import javax.mail.internet.InternetAddress;
 import java.io.File;
 
+@Log4j2
 @Service("emailService")
 public class EmailService {
 
@@ -22,9 +24,6 @@ public class EmailService {
     @Autowired
     private SimpleMailMessage preConfiguredMessage;
 
-    /**
-     * This method will send compose and send the message
-     */
     public void sendMail(String to, String subject, String body) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(to);
@@ -33,9 +32,6 @@ public class EmailService {
         mailSender.send(message);
     }
 
-    /**
-     * This method will send a pre-configured message
-     */
     public void sendPreConfiguredMail(String message) {
         SimpleMailMessage mailMessage = new SimpleMailMessage(preConfiguredMessage);
         mailMessage.setText(message);
@@ -57,8 +53,7 @@ public class EmailService {
         try {
             mailSender.send(preparator);
         } catch (MailException ex) {
-            // simply log it and go on...
-            System.err.println(ex.getMessage());
+            log.error("@@@ sendMailWithAttachment() ", ex);
         }
     }
 
@@ -79,8 +74,7 @@ public class EmailService {
         try {
             mailSender.send(preparator);
         } catch (MailException ex) {
-            // simply log it and go on...
-            System.err.println(ex.getMessage());
+            log.error("@@@ sendMailWithInlineResources() ", ex);
         }
     }
 }
