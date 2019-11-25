@@ -1,13 +1,13 @@
 package com.froyo.filters;
 
+import lombok.extern.log4j.Log4j2;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-/**
- * @author Froy
- */
+@Log4j2
 @WebFilter(urlPatterns = "/app/*")
 public class XYZFilter implements Filter {
 
@@ -23,7 +23,7 @@ public class XYZFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
-        System.out.println("Entró al filtro XYZFilter: " + req.getRequestURI());
+        log.info("Entró al filtro XYZFilter: " + req.getRequestURI());
         chain.doFilter(request, response);
     }
 

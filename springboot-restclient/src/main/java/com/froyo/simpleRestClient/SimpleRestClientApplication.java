@@ -1,5 +1,6 @@
 package com.froyo.simpleRestClient;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
@@ -12,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
  * CommandLineRunner: aplicación de arranque con el método run el cual se le puede enviar un arreglo de String.
  * Aplicación ejecutada en la consola.
  */
+@Log4j2
 @SpringBootApplication
 public class SimpleRestClientApplication implements CommandLineRunner {
 
@@ -40,7 +42,7 @@ public class SimpleRestClientApplication implements CommandLineRunner {
         RestTemplate plantilla = new RestTemplate();
         String resultado = plantilla.getForObject("http://localhost:8080/retrieveCustomer", String.class);
 
-        System.out.println("Parámetro: " + argsRun[0]);
-        System.out.println(resultado);
+        log.info("Parámetro: " + argsRun[0]);
+        log.info(resultado);
     }
 }
