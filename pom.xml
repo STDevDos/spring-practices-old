@@ -39,6 +39,7 @@
         <module>springboot-servlet</module>
         <module>springboot-soap</module>
         <module>springboot-customvalidations</module>
+        <module>springboot-logback</module>
     </modules>
 
     <properties>
