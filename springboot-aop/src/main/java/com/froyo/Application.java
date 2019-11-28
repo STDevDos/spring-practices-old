@@ -4,9 +4,6 @@ import com.froyo.dao.AccountDAO;
 import com.froyo.dao.MembershipDAO;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-/**
- * @author froy
- */
 public class Application {
 
     public static void main(String[] args) {

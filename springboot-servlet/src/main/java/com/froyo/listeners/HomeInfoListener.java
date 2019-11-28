@@ -26,6 +26,6 @@ public class HomeInfoListener implements ServletContextListener {
         sc.removeAttribute("user");
         sc.removeAttribute("name");
         sc.removeAttribute("dato");
-        System.out.println("ServletContextEvent destroyed.");
+        log.info("ServletContextEvent destroyed.");
     }
 }

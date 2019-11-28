@@ -1,12 +1,12 @@
 package com.froyo.springprofiles.config;
 
-import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-@Log4j
+@Slf4j
 @Configuration
 @EnableConfigurationProperties(DBConfiguration.class)
 public class DBConnectionConfiguration {
@@ -21,11 +21,11 @@ public class DBConnectionConfiguration {
     @Profile("dev")
     @Bean
     public String devDBCcnnection() {
-        System.out.println("DB Connection for Dev");
-        System.out.println(dbConfiguration.getUrl());
-        System.out.println(dbConfiguration.getUserName());
-        System.out.println(dbConfiguration.getPassword());
-        System.out.println(dbConfiguration.getDriverClassName());
+        log.info("DB Connection for Dev");
+        log.info(dbConfiguration.getUrl());
+        log.info(dbConfiguration.getUserName());
+        log.info(dbConfiguration.getPassword());
+        log.info(dbConfiguration.getDriverClassName());
         return "DB Connection for Dev";
     }
 
@@ -33,11 +33,11 @@ public class DBConnectionConfiguration {
     @Profile("test")
     @Bean
     public String devTestCcnnection() {
-        System.out.println("DB Connection for Test");
-        System.out.println(dbConfiguration.getUrl());
-        System.out.println(dbConfiguration.getUserName());
-        System.out.println(dbConfiguration.getPassword());
-        System.out.println(dbConfiguration.getDriverClassName());
+        log.info("DB Connection for Test");
+        log.info(dbConfiguration.getUrl());
+        log.info(dbConfiguration.getUserName());
+        log.info(dbConfiguration.getPassword());
+        log.info(dbConfiguration.getDriverClassName());
         return "DB Connection for Test";
     }
 
@@ -45,11 +45,11 @@ public class DBConnectionConfiguration {
     @Profile("prod")
     @Bean
     public String devProdCcnnection() {
-        System.out.println("DB Connection for Prod");
-        System.out.println(dbConfiguration.getUrl());
-        System.out.println(dbConfiguration.getUserName());
-        System.out.println(dbConfiguration.getPassword());
-        System.out.println(dbConfiguration.getDriverClassName());
+        log.info("DB Connection for Prod");
+        log.info(dbConfiguration.getUrl());
+        log.info(dbConfiguration.getUserName());
+        log.info(dbConfiguration.getPassword());
+        log.info(dbConfiguration.getDriverClassName());
         return "DB Connection for Prod";
     }
 

@@ -1,14 +1,14 @@
 package com.froyo.dao;
 
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.java.Log;
 import org.springframework.stereotype.Component;
 
-@Log4j2
+@Log
 @Component
 public class AccountDAO {
 
     public void addAccount() {
-        System.out.println(getClass() + " : DB :: ADDING AN ACCOUNT ");
+        log.info(getClass() + " : DB :: ADDING AN ACCOUNT ");
     }
 
 }
