@@ -27,7 +27,7 @@ public class CurrencyRestController {
     private CurrencyService currencyH2Service;
 
     @PostMapping("/addCurrency")
-    private CurrencyResponse addCurrencyH2(@RequestBody CurrencyRequest currencyRequest) {
+    private CurrencyResponse addCurrency(@RequestBody CurrencyRequest currencyRequest) {
 
         CurrencyResponse result = new CurrencyResponse();
         result.setCurrencyRequest(currencyRequest);

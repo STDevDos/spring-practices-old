@@ -2,7 +2,6 @@ package com.froyo.spring.model.entity;
 
 import com.froyo.spring.model.entity.listener.CurrencyListener;
 import lombok.Data;
-import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,7 +10,6 @@ import java.io.Serializable;
 @Table(name = "currency")
 @EntityListeners(CurrencyListener.class) // Listener process logs
 @Data
-@ToString
 public class CurrencyEntity implements Serializable {
 
     private static final long serialVersionUID = 6734139637088679530L;
