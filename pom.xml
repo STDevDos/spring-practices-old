@@ -42,6 +42,7 @@
         <module>springboot-logback</module>
         <module>springboot-async-service</module>
         <module>springboot-async-employeeservice</module>
+        <module>springboot-drools</module>
     </modules>
 
     <properties>
