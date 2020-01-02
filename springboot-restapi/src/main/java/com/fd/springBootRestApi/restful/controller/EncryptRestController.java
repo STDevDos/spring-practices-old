@@ -1,10 +1,10 @@
 package com.fd.springBootRestApi.restful.controller;
 
+import lombok.AllArgsConstructor;
 import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.jasypt.util.password.BasicPasswordEncryptor;
 import org.jasypt.util.text.BasicTextEncryptor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author Froy
  */
+@AllArgsConstructor
 @RestController
 public class EncryptRestController {
 
-    @Autowired
-    private Environment environment;
+    private final Environment environment;
 
     @GetMapping("test")
     public String test() {

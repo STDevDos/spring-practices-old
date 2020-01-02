@@ -3,17 +3,17 @@ package com.froyo.springbootsoapexample.endpoint;
 import com.froyo.spring_boot_soap_example.GetUserRequest;
 import com.froyo.spring_boot_soap_example.GetUserResponse;
 import com.froyo.springbootsoapexample.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
+@AllArgsConstructor
 @Endpoint
 public class UserEndpoint {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
 
     @PayloadRoot(namespace = "http://techprimers.com/spring-boot-soap-example",

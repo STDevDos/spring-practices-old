@@ -1,7 +1,7 @@
 package com.fd.springBootRestApi.restful.controller;
 
 import com.fd.springBootRestApi.restful.servcie.FuncionesMatematicas;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.*;
  *
  * @author Muguruza
  */
+@AllArgsConstructor
 @RestController
 public class FuncionesMatematicasWebController {
 
-    @Autowired
     @Qualifier(value = "FuncionesMatematicasImpl")
-    private FuncionesMatematicas funcionesMatematicas;
+    private final FuncionesMatematicas funcionesMatematicas;
 
     /**
      * Enviando parámetro desde el path.

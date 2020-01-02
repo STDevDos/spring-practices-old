@@ -5,8 +5,8 @@ import com.froyo.messages.codes.CurrencyMessageCode;
 import com.froyo.spring.model.dto.CurrencyRequest;
 import com.froyo.spring.model.dto.CurrencyResponse;
 import com.froyo.spring.repository.CurrencyH2Repository;
+import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -15,13 +15,13 @@ import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
+@AllArgsConstructor
 @Log4j2
 @Repository
 public class CurrencyH2RepositoryImpl implements CurrencyH2Repository {
 
-    @Autowired
     @Qualifier("jdbcTemplateH2")
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     @PostConstruct
     public void createTable() {

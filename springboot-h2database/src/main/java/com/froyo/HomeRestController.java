@@ -6,7 +6,7 @@ import com.froyo.mapper.PersonaMapper;
 import com.froyo.messages.MessagePair;
 import com.froyo.messages.MessagePairTypeCode;
 import com.froyo.model.Persona;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -16,12 +16,12 @@ import javax.annotation.PostConstruct;
 import javax.validation.Valid;
 import java.util.List;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/persona")
 public class HomeRestController {
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     /*
      * @PostConstruct Se ejecuta después de que se complete la inyección de dependencia.

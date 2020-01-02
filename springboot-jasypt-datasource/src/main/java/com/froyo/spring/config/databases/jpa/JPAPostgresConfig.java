@@ -2,7 +2,7 @@ package com.froyo.spring.config.databases.jpa;
 
 import com.froyo.spring.model.entity.DomainPackagesJPA;
 import com.froyo.spring.repository.postgres.RepositoryPackagePostgres;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -16,6 +16,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+@AllArgsConstructor
 @Configuration
 @EnableJpaRepositories(
         entityManagerFactoryRef = "postgresEntityManagerFactory",
@@ -24,11 +25,8 @@ import java.util.Properties;
 )
 public class JPAPostgresConfig {
 
-    @Autowired
-    private Environment env;
-
-    @Autowired
-    private DataSource datasourcePostgres;
+    private final Environment env;
+    private final DataSource datasourcePostgres;
 
     @Bean(name = "postgresEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean postgresEntityManagerFactory() {

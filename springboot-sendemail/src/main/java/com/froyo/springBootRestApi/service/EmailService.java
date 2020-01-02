@@ -1,7 +1,7 @@
 package com.froyo.springBootRestApi.service;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
@@ -14,15 +14,13 @@ import javax.mail.Message;
 import javax.mail.internet.InternetAddress;
 import java.io.File;
 
+@AllArgsConstructor
 @Log4j2
 @Service("emailService")
 public class EmailService {
 
-    @Autowired
-    private JavaMailSender mailSender;
-
-    @Autowired
-    private SimpleMailMessage preConfiguredMessage;
+    private final JavaMailSender mailSender;
+    private final SimpleMailMessage preConfiguredMessage;
 
     public void sendMail(String to, String subject, String body) {
         SimpleMailMessage message = new SimpleMailMessage();

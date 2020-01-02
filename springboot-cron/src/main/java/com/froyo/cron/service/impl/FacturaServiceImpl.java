@@ -4,14 +4,14 @@ import com.froyo.cron.model.CustomerInfo;
 import com.froyo.cron.model.ProductOrder;
 import com.froyo.cron.service.FacturaService;
 import com.froyo.cron.service.MailService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+@AllArgsConstructor
 @Service("facturaServiceImpl")
 public class FacturaServiceImpl implements FacturaService {
 
-    @Autowired
-    private MailService mailService;
+    private final MailService mailService;
 
     @Override
     public void sendBalance() {

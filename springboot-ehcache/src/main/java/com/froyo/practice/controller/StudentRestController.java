@@ -4,20 +4,19 @@ import com.froyo.practice.model.Student;
 import com.froyo.practice.model.UserDetails;
 import com.froyo.practice.service.StudentService;
 import com.froyo.practice.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("api/student")
 public class StudentRestController {
 
     private static final String USERID = "X-USERID";
-    @Autowired
-    private UserService userService;
-    @Autowired
-    private StudentService studentService;
+    private final UserService userService;
+    private final StudentService studentService;
 
     @GetMapping(path = "/evictCache")
     public void evictCache() {

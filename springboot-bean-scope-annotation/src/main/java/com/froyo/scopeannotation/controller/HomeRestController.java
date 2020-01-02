@@ -2,19 +2,17 @@ package com.froyo.scopeannotation.controller;
 
 import com.froyo.scopeannotation.bean.Address;
 import com.froyo.scopeannotation.bean.Age;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/api")
 public class HomeRestController {
 
-    @Autowired
-    private Age age;
-
-    @Autowired
-    private Address address;
+    private final Age age;
+    private final Address address;
 
     @RequestMapping("/address")
     public String address() {

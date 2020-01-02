@@ -4,10 +4,10 @@ import com.froyo.cron.model.ProductOrder;
 import com.froyo.cron.service.MailService;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
+import lombok.AllArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.MailException;
@@ -20,6 +20,7 @@ import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import java.util.HashMap;
 import java.util.Map;
 
+@AllArgsConstructor
 @Service("mailServiceImpl")
 public class MailServiceImpl implements MailService {
 
@@ -27,12 +28,10 @@ public class MailServiceImpl implements MailService {
 
     private static final String FM_MAILTEMPLATE = "fm_mailTemplate.ftl";
 
-    @Autowired
-    private JavaMailSender mailSender;
+    private final JavaMailSender mailSender;
 
-    @Autowired
     @Qualifier("retrieveFreeMarkerConfigurationTemplate")
-    private Configuration freemarkerConfiguration;
+    private final Configuration freemarkerConfiguration;
 
     @Override
     public void sendEmail(Object object) {
@@ -83,8 +82,6 @@ public class MailServiceImpl implements MailService {
             return StringUtils.EMPTY;
         }
     }
-
-
 
 
 }

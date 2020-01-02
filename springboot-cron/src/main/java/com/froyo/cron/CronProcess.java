@@ -1,17 +1,17 @@
 package com.froyo.cron;
 
 import com.froyo.cron.service.FacturaService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+@AllArgsConstructor
 @Service
 public class CronProcess {
 
-    @Autowired
     @Qualifier(value = "facturaServiceImpl")
-    private FacturaService facturaService;
+    private final FacturaService facturaService;
 
     /**
      * //docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/support/CronSequenceGenerator.html

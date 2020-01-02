@@ -2,8 +2,8 @@ package com.froyo.spring.config.databases.jpa;
 
 import com.froyo.spring.model.entity.DomainPackagesJPA;
 import com.froyo.spring.repository.mysql.RepositoryPackageMysql;
+import lombok.AllArgsConstructor;
 import org.hibernate.jpa.HibernatePersistenceProvider;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -15,6 +15,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+@AllArgsConstructor
 @Configuration
 @EnableJpaRepositories(
         entityManagerFactoryRef = "mysqlEntityManagerFactory",
@@ -23,11 +24,8 @@ import java.util.Properties;
 )
 public class JPAMysqlConfig {
 
-    @Autowired
-    private Environment env;
-
-    @Autowired
-    private DataSource datasourceMysql;
+    private final Environment env;
+    private final DataSource datasourceMysql;
 
     @Bean(name = "mysqlEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean mysqlEntityManagerFactory() {
@@ -63,11 +61,11 @@ public class JPAMysqlConfig {
 
     //private JpaVendorAdapter vendorAdaptor() {
     //final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-        // put all the adapter properties here, such as show sql
+    // put all the adapter properties here, such as show sql
 
-        //vendorAdapter.setShowSql(env.getProperty("postgresql.jpa.show-sql", Boolean.class)); 	//Solo para que nos muestre las sentencias.
-        //vendorAdapter.setDatabasePlatform(env.getProperty("postgresql.jpa.properties.hibernate.dialect",String.class));
-        //vendorAdapter.setGenerateDdl(true);
+    //vendorAdapter.setShowSql(env.getProperty("postgresql.jpa.show-sql", Boolean.class)); 	//Solo para que nos muestre las sentencias.
+    //vendorAdapter.setDatabasePlatform(env.getProperty("postgresql.jpa.properties.hibernate.dialect",String.class));
+    //vendorAdapter.setGenerateDdl(true);
 
     //return vendorAdapter;
     //}

@@ -3,28 +3,26 @@ package com.froyo.spring.restcontroller;
 import com.froyo.spring.model.dto.CurrencyRequest;
 import com.froyo.spring.model.dto.CurrencyResponse;
 import com.froyo.spring.service.CurrencyService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/api")
 public class CurrencyRestController {
 
-    @Autowired
     @Qualifier("currencyPostgresServiceImpl")
-    private CurrencyService currencyPostgresService;
+    private final CurrencyService currencyPostgresService;
 
-    @Autowired
     @Qualifier("currencyMysqlServiceImpl")
-    private CurrencyService currencyMysqlServiceImpl;
+    private final CurrencyService currencyMysqlServiceImpl;
 
-    @Autowired
     @Qualifier("currencyH2ServiceImpl")
-    private CurrencyService currencyH2Service;
+    private final CurrencyService currencyH2Service;
 
     @PostMapping("/addCurrency")
     private CurrencyResponse addCurrency(@RequestBody CurrencyRequest currencyRequest) {

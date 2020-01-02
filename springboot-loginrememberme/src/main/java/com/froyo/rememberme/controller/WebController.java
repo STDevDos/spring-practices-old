@@ -1,16 +1,16 @@
 package com.froyo.rememberme.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+@AllArgsConstructor
 @Controller
 public class WebController {
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     @SuppressWarnings("SameReturnValue")
     @RequestMapping(value = "/createTable", method = RequestMethod.GET)

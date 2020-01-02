@@ -1,21 +1,21 @@
 package com.froyo.spring.repository.h2.impl;
 
 import com.froyo.spring.repository.h2.JDBCH2Repository;
+import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 
+@AllArgsConstructor
 @Log4j2
 @Repository
 public class JDBCH2RepositoryImpl implements JDBCH2Repository {
 
-    @Autowired
     @Qualifier("jdbcTemplateH2")
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     @PostConstruct
     public void createTable() {

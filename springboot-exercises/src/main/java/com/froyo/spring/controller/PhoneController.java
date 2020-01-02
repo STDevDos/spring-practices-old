@@ -2,7 +2,7 @@ package com.froyo.spring.controller;
 
 import com.froyo.spring.model.entity.postgres.PhoneEntity;
 import com.froyo.spring.repository.postgres.PhoneRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,12 +10,12 @@ import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/api/v1")
 public class PhoneController {
 
-    @Autowired
-    private PhoneRepository phoneRepository;
+    private final PhoneRepository phoneRepository;
 
     // GET method to fetch all phones
     @GetMapping("/phones")
