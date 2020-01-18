@@ -45,6 +45,7 @@
         <module>springboot-drools</module>
         <module>springboot-swagger2</module>
         <module>springboot-flowable</module>
+        <module>springboot-mailtrap</module>
     </modules>
 
     <properties>
