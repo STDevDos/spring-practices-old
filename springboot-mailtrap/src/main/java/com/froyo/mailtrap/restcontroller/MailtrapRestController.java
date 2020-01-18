@@ -1,24 +1,25 @@
 package com.froyo.mailtrap.restcontroller;
 
 import com.froyo.mailtrap.config.properties.EmailConfig;
+import com.froyo.mailtrap.dto.FeedbackDTO;
+import com.froyo.mailtrap.dto.inout.SendFeedbackResponse;
+import com.froyo.mailtrap.service.MailtrapService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-@Slf4j
+import javax.validation.Valid;
+
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api")
 public class MailtrapRestController {
 
-    private final EmailConfig emailConfig;
+    private final MailtrapService mailtrapService;
 
-    @GetMapping("home")
-    public String home(){
-        log.info(emailConfig.toString());
-        return "success";
+    @PostMapping("/sendFeedback")
+    public SendFeedbackResponse sendFeedback(@RequestBody @Valid FeedbackDTO feedbackDTO){
+        return mailtrapService.sendFeedback(feedbackDTO);
     }
 
 }

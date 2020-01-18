@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class EmailConfig {
 
     private String host;
-    private String port;
+    private int port;
     private String userName;
     private String password;
 
