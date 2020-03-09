@@ -46,6 +46,8 @@
         <module>springboot-swagger2</module>
         <module>springboot-flowable</module>
         <module>springboot-mailtrap</module>
+        <module>springboot-excelcsv</module>
+        <module>springboot-basic</module>
     </modules>
 
     <properties>

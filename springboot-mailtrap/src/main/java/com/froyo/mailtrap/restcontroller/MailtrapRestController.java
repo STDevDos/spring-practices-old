@@ -22,4 +22,16 @@ public class MailtrapRestController {
         return mailtrapService.sendFeedback(feedbackDTO);
     }
 
+    @GetMapping("/devtools")
+    public String devtools(){
+        return "success mil mascaras";
+    }
+
+    @GetMapping("/devtools2")
+    public String devtools2(){
+        return "success seis";
+    }
+
+
+
 }
