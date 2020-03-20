@@ -5,8 +5,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="saturn" class="com.froyo.beans.Planet">
-        <constructor-arg index="0" type="com.froyo.beans.common.codevalues.PlanetTypeEnum" value="MERCURIO"/>
+    <bean id="mercury" class="com.froyo.model.dto.PlanetDTO">
+        <constructor-arg index="0" type="com.froyo.common.codevalues.PlanetTypeEnum" value="MERCURY"/>
     </bean>
 
 </beans>

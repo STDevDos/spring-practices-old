@@ -1,6 +1,6 @@
-package com.froyo.service;
+package com.froyo;
 
-import com.froyo.beans.Planet;
+import com.froyo.model.dto.PlanetDTO;
 import lombok.extern.java.Log;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -9,9 +9,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class AppXML {
 
     public static void main(String[] args) {
+
         ConfigurableApplicationContext appContext = new ClassPathXmlApplicationContext("com/froyo/xml/beans.xml");
 
-        Planet m = (Planet) appContext.getBean("saturn"); /* name of the bean */
+        PlanetDTO m = (PlanetDTO) appContext.getBean("mercury"); /* name of the bean */
         log.info(m.getPlanetTypeEnum().toString());
 
         appContext.close();

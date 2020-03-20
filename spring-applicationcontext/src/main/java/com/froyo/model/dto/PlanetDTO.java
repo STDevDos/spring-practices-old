@@ -1,11 +1,8 @@
-package com.froyo.beans;
+package com.froyo.model.dto;
 
-import com.froyo.beans.common.codevalues.PlanetTypeEnum;
+import com.froyo.common.codevalues.PlanetTypeEnum;
 import lombok.Builder;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
-
-import java.math.BigDecimal;
 
 /**
  * links:
@@ -13,7 +10,7 @@ import java.math.BigDecimal;
  */
 @Data
 @Builder(toBuilder = true)
-public class Planet {
+public class PlanetDTO {
 
     private PlanetTypeEnum planetTypeEnum;
 
