@@ -2,9 +2,6 @@ package com.froyo.config;
 
 import com.froyo.common.codevalues.PlanetTypeEnum;
 import com.froyo.model.dto.PlanetDTO;
-import com.froyo.service.BasuraService;
-import com.froyo.service.impl.BasuraServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
