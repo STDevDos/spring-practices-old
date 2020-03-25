@@ -1,7 +1,5 @@
-package com.froyo.service.config.databases;
+package com.froyo.app.config.jpa;
 
-import com.froyo.config.datasources.DataSourceMysqlConfig;
-import com.froyo.config.datasources.jpa.JPAMysqlConfig;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 

@@ -48,6 +48,7 @@
         <module>springboot-mailtrap</module>
         <module>springboot-excelcsv</module>
         <module>springboot-basic</module>
+        <module>springboot-jpa-basic</module>
     </modules>
 
     <properties>

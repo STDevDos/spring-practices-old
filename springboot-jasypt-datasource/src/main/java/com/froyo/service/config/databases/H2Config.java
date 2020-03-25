@@ -1,6 +1,6 @@
 package com.froyo.service.config.databases;
 
-import com.froyo.service.config.databases.datasources.DataSourceH2Config;
+import com.froyo.config.datasources.DataSourceH2Config;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 

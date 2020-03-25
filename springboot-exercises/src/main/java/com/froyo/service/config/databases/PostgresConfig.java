@@ -1,7 +1,7 @@
 package com.froyo.service.config.databases;
 
-import com.froyo.service.config.databases.datasources.DataSourcePostgresConfig;
-import com.froyo.service.config.databases.jpa.JPAPostgresConfig;
+import com.froyo.config.datasources.DataSourcePostgresConfig;
+import com.froyo.config.datasources.jpa.JPAPostgresConfig;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 

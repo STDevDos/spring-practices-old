@@ -1,4 +1,4 @@
-package com.froyo.service.config.databases.datasources;
+package com.froyo.config.datasources;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -12,23 +12,23 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 
 @Configuration
-@ConfigurationProperties(prefix = "mysql.datasource")
+@ConfigurationProperties(prefix = "postgresql.datasource")
 @EnableTransactionManagement
-public class DataSourceMysqlConfig extends HikariConfig {
+public class DataSourcePostgresConfig extends HikariConfig {
 
-    @Bean(name = "datasourceMysql")
-    public DataSource datasourceMysql() {
+    @Bean(name = "datasourcePostgres")
+    public DataSource datasourcePostgres() {
         return new HikariDataSource(this);
     }
 
-    @Bean(name = "jdbcTemplateMysql")
-    public JdbcTemplate jdbcTemplate(DataSource datasourceMysql) {
-        return new JdbcTemplate(datasourceMysql);
+    @Bean(name = "jdbcTemplatePostgres")
+    public JdbcTemplate jdbcTemplate(DataSource datasourcePostgres) {
+        return new JdbcTemplate(datasourcePostgres);
     }
 
-    @Bean(name = "namedJdbcTemplateMysql")
-    public NamedParameterJdbcTemplate namedParameterJdbcTemplate(DataSource datasourceMysql) {
-        return new NamedParameterJdbcTemplate(datasourceMysql);
+    @Bean(name = "namedJdbcTemplatePostgres")
+    public NamedParameterJdbcTemplate namedParameterJdbcTemplate(DataSource datasourcePostgres) {
+        return new NamedParameterJdbcTemplate(datasourcePostgres);
     }
 
 }

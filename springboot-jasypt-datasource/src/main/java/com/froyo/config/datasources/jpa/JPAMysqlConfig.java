@@ -1,4 +1,4 @@
-package com.froyo.service.config.databases.jpa;
+package com.froyo.config.datasources.jpa;
 
 import com.froyo.service.model.entity.DomainPackagesJPA;
 import com.froyo.service.repository.mysql.RepositoryPackageMysql;

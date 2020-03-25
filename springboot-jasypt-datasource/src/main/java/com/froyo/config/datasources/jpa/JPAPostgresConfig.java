@@ -1,6 +1,6 @@
-package com.froyo.service.config.databases.jpa;
+package com.froyo.config.datasources.jpa;
 
-import com.froyo.service.model.entity.postgres.DomainPackagesPostgres;
+import com.froyo.service.model.entity.DomainPackagesJPA;
 import com.froyo.service.repository.postgres.RepositoryPackagePostgres;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -8,7 +8,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
@@ -31,8 +33,8 @@ public class JPAPostgresConfig {
 
         final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(datasourcePostgres);
-        entityManagerFactoryBean.setPackagesToScan(DomainPackagesPostgres.class.getPackageName());
-        //entityManagerFactoryBean.setJpaVendorAdapter(this.vendorAdaptor());
+        entityManagerFactoryBean.setPackagesToScan(DomainPackagesJPA.class.getPackageName());
+        entityManagerFactoryBean.setJpaVendorAdapter(this.vendorAdaptor());
 
         //entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
         //entityManagerFactoryBean.setPersistenceUnitName("postgres");
@@ -58,15 +60,15 @@ public class JPAPostgresConfig {
         return properties;
     }
 
-    //private JpaVendorAdapter vendorAdaptor() {
-    //    final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-    // put all the adapter properties here, such as show sql
+    private JpaVendorAdapter vendorAdaptor() {
+        final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+        // put all the adapter properties here, such as show sql
 
-    //vendorAdapter.setShowSql(env.getProperty("postgresql.jpa.show-sql", Boolean.class)); 	//Solo para que nos muestre las sentencias.
-    //vendorAdapter.setDatabasePlatform(env.getProperty("postgresql.jpa.properties.hibernate.dialect",String.class));
-    //vendorAdapter.setGenerateDdl(true);
+        //vendorAdapter.setShowSql(env.getProperty("postgresql.jpa.show-sql", Boolean.class)); 	//Solo para que nos muestre las sentencias.
+        //vendorAdapter.setDatabasePlatform(env.getProperty("postgresql.jpa.properties.hibernate.dialect",String.class));
+        //vendorAdapter.setGenerateDdl(true);
 
-    //   return vendorAdapter;
-    //}
+        return vendorAdapter;
+    }
 
 }
