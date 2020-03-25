@@ -4,6 +4,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@Import({DataSourceMysqlConfig.class, JPAMysqlConfig.class})
+@Import({DataSourceMysqlConfig.class, MysqlJPAConfig.class})
 public class MysqlConfig {
 }

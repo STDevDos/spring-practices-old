@@ -1,9 +1,9 @@
 package com.froyo.app.service;
 
 
-import com.froyo.app.model.dto.CurrencyRequest;
-import com.froyo.app.model.dto.CurrencyResponse;
+import com.froyo.app.model.dto.CurrencyEntityDTORequest;
+import com.froyo.app.model.dto.CurrencyEntityDTOResponse;
 
 public interface CurrencyService {
-    CurrencyResponse saveCurrency(final CurrencyRequest currencyEntityDTO);
+    CurrencyEntityDTOResponse saveCurrency(final CurrencyEntityDTORequest dtoRequest);
 }

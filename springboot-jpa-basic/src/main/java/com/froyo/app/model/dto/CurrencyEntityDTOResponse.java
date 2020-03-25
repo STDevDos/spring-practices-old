@@ -9,9 +9,9 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class CurrencyResponse extends AbstractResponse {
+public class CurrencyEntityDTOResponse extends AbstractResponse {
 
     private static final long serialVersionUID = 3141555321954313455L;
-    CurrencyRequest currencyRequest = new CurrencyRequest();
+    CurrencyEntityDTORequest currencyEntityDTORequest = new CurrencyEntityDTORequest();
 
 }

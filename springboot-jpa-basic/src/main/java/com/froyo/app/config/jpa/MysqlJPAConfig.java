@@ -21,7 +21,7 @@ import java.util.Properties;
 @AllArgsConstructor
 @Configuration
 @EnableJpaRepositories(basePackageClasses = RepositoryPackageMysql.class)
-public class JPAMysqlConfig {
+public class MysqlJPAConfig {
 
     private final Environment env;
     private final DataSource datasourceMysql;
@@ -29,18 +29,18 @@ public class JPAMysqlConfig {
     @Bean(name = "entityManagerFactory")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 
-        final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setDataSource(datasourceMysql);
-        entityManagerFactoryBean.setPackagesToScan(DomainPackagesJPA.class.getPackageName());
-        entityManagerFactoryBean.setJpaVendorAdapter(this.vendorAdaptor());
+        final LocalContainerEntityManagerFactoryBean emfBean = new LocalContainerEntityManagerFactoryBean();
+        emfBean.setDataSource(datasourceMysql);
+        emfBean.setPackagesToScan(DomainPackagesJPA.class.getPackageName());
+        emfBean.setJpaVendorAdapter(this.vendorAdaptor());
 
-        entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
-        entityManagerFactoryBean.setPersistenceUnitName("mysql");
+        emfBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
+        emfBean.setPersistenceUnitName("mysql");
 
-        entityManagerFactoryBean.setJpaProperties(this.hibernateProperties());
+        emfBean.setJpaProperties(this.hibernateProperties());
         //entityManagerFactoryBean.afterPropertiesSet();
 
-        return entityManagerFactoryBean;
+        return emfBean;
     }
 
     @Bean(name = "transactionManager")
