@@ -62,7 +62,7 @@ public class JPAMysqlConfig {
         // put all the adapter properties here, such as show sql
 
         vendorAdapter.setShowSql(env.getProperty("mysql.jpa.show-sql", Boolean.class));
-        //Solo para que nos muestre las sentencias.
+        //show sentences
         vendorAdapter.setDatabasePlatform(env.getProperty("mysql.jpa.properties.hibernate.dialect",String.class));
         vendorAdapter.setGenerateDdl(true);
 

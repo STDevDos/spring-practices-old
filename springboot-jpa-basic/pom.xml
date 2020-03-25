@@ -53,7 +53,14 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
-            <!-- <version>5.0.3.RELEASE</version> -->
+        </dependency>
+
+        <!-- Cannot resolve configuration property h2.datasource.jdbc-url yml -->
+        <!-- this one is need for Hikari Configuration, because we will use prefix configuration -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <!-- Database -->

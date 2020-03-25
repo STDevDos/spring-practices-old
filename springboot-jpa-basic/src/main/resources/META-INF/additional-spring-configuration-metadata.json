@@ -1,0 +1,58 @@
+{
+  "properties": [
+    {
+      "name": "mysql.jpa.properties.hibernate.ddl-auto",
+      "type": "java.lang.String",
+      "description": "Description for mysql.jpa.properties.hibernate.ddl-auto."
+    },
+    {
+      "name": "mysql.jpa.properties.hibernate.dialect",
+      "type": "java.lang.String",
+      "description": "Description for mysql.jpa.properties.hibernate.dialect."
+    },
+    {
+      "name": "mysql.jpa.show-sql",
+      "type": "java.lang.String",
+      "description": "Description for mysql.jpa.show-sql."
+    },
+    {
+      "name": "mysql.datasource.hikari.poolName",
+      "type": "java.lang.String",
+      "description": "Description for mysql.datasource.hikari.poolName."
+    },
+    {
+      "name": "mysql.datasource.hikari.maximum-pool-size",
+      "type": "java.lang.String",
+      "description": "Description for mysql.datasource.hikari.maximum-pool-size."
+    },
+    {
+      "name": "mysql.datasource.hikari.minimum-idle",
+      "type": "java.lang.String",
+      "description": "Description for mysql.datasource.hikari.minimum-idle."
+    },
+    {
+      "name": "mysql.datasource.hikari.connection-test-query",
+      "type": "java.lang.String",
+      "description": "Description for mysql.datasource.hikari.connection-test-query."
+    },
+    {
+      "name": "mysql.datasource.driver-class-name",
+      "type": "java.lang.String",
+      "description": "Description for mysql.datasource.driver-class-name."
+    },
+    {
+      "name": "mysql.datasource.password",
+      "type": "java.lang.String",
+      "description": "Description for mysql.datasource.password."
+    },
+    {
+      "name": "mysql.datasource.username",
+      "type": "java.lang.String",
+      "description": "Description for mysql.datasource.username."
+    },
+    {
+      "name": "mysql.datasource.jdbc-Url",
+      "type": "java.lang.String",
+      "description": "Description for mysql.datasource.jdbc-Url."
+    }
+  ] }
