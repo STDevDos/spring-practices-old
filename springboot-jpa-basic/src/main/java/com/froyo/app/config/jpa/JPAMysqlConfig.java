@@ -15,6 +15,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
+import java.util.Optional;
 import java.util.Properties;
 
 @AllArgsConstructor
@@ -61,7 +62,11 @@ public class JPAMysqlConfig {
         final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         // put all the adapter properties here, such as show sql
 
-        vendorAdapter.setShowSql(env.getProperty("mysql.jpa.show-sql", Boolean.class));
+        Boolean showSQL =
+                Optional.ofNullable(env.getProperty("mysql.jpa.show-sql", Boolean.class))
+                        .orElse(Boolean.FALSE);
+
+        vendorAdapter.setShowSql(showSQL);
         //show sentences
         vendorAdapter.setDatabasePlatform(env.getProperty("mysql.jpa.properties.hibernate.dialect",String.class));
         vendorAdapter.setGenerateDdl(true);
