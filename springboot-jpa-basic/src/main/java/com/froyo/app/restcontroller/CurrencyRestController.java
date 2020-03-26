@@ -2,13 +2,11 @@ package com.froyo.app.restcontroller;
 
 import com.froyo.app.model.dto.CurrencyEntityDTORequest;
 import com.froyo.app.model.dto.CurrencyEntityDTOResponse;
+import com.froyo.app.model.entity.CurrencyEntity;
 import com.froyo.app.service.CurrencyService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
@@ -29,5 +27,13 @@ public class CurrencyRestController {
 
         return result;
     }
+
+    @GetMapping("/retrieveCurrency")
+    private CurrencyEntity retrieveCurrency(){
+        currencyMysqlServiceImpl.retrieveCurrency();
+        return null;
+    }
+
+
 
 }

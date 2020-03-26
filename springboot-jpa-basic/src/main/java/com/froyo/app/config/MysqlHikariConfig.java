@@ -1,4 +1,4 @@
-package com.froyo.app.config.jpa;
+package com.froyo.app.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -7,28 +7,26 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
 @Configuration
 @ConfigurationProperties(prefix = "mysql.datasource")
-@EnableTransactionManagement
-public class DataSourceMysqlConfig extends HikariConfig {
+public class MysqlHikariConfig extends HikariConfig {
 
     @Bean(name = "datasourceMysql")
-    public DataSource datasourceMysql() {
+    public DataSource datasource() {
         return new HikariDataSource(this);
     }
 
     @Bean(name = "jdbcTemplateMysql")
-    public JdbcTemplate jdbcTemplate(DataSource datasourceMysql) {
-        return new JdbcTemplate(datasourceMysql);
+    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+        return new JdbcTemplate(dataSource);
     }
 
     @Bean(name = "namedJdbcTemplateMysql")
-    public NamedParameterJdbcTemplate namedParameterJdbcTemplate(DataSource datasourceMysql) {
-        return new NamedParameterJdbcTemplate(datasourceMysql);
+    public NamedParameterJdbcTemplate namedParameterJdbcTemplate(DataSource dataSource) {
+        return new NamedParameterJdbcTemplate(dataSource);
     }
 
 }

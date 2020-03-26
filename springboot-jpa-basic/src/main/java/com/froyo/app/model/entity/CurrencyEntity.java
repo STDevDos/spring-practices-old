@@ -6,7 +6,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "currency")
+@Table(name = "currency",uniqueConstraints = {
+        @UniqueConstraint(columnNames = "currency", name = "uniqueCurrencyConstraint")
+    }
+)
 @Data
 public class CurrencyEntity implements Serializable {
 
