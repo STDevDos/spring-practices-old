@@ -44,10 +44,7 @@ public class MysqlJPAConfig {
         return emfBean;
     }
 
-    /**
-     * main transaction manager for @Transactional components.
-     * @return
-     */
+    // main transaction manager for @Transactional components.
     @Bean
     public PlatformTransactionManager transactionManager() {
         return new JpaTransactionManager(entityManagerFactory().getObject());

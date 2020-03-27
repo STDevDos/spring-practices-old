@@ -3,6 +3,7 @@ package com.froyo.app.service.impl;
 import com.froyo.app.model.dto.CurrencyEntityDTORequest;
 import com.froyo.app.model.dto.CurrencyEntityDTOResponse;
 import com.froyo.app.model.entity.CurrencyEntity;
+import com.froyo.app.repository.CurrencyJDBCRepository;
 import com.froyo.app.repository.mysql.CurrencyMysqlRepository;
 import com.froyo.app.service.CurrencyService;
 import com.froyo.messages.MessagePairUtils;
@@ -13,6 +14,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @AllArgsConstructor
@@ -28,6 +31,8 @@ public class CurrencyMysqlServiceImpl implements CurrencyService {
 
     private final CurrencyMysqlRepository currencyMysqlRepository;
 
+    private final CurrencyJDBCRepository currencyJDBCRepository;
+
     @Override
     public CurrencyEntityDTOResponse saveCurrency(final CurrencyEntityDTORequest dtoRequest) {
 
@@ -35,11 +40,16 @@ public class CurrencyMysqlServiceImpl implements CurrencyService {
 
         CurrencyEntity currencyEntity2 = new CurrencyEntity();
         currencyEntity2.setCurrency(LocalDateTime.now().toString());
-        currencyMysqlRepository.save(currencyEntity2);
+        //currencyMysqlRepository.save(currencyEntity2);
 
         CurrencyEntity currencyEntity = new CurrencyEntity();
         currencyEntity.setCurrency(dtoRequest.getCurrency());
-        currencyMysqlRepository.save(currencyEntity);
+        //currencyMysqlRepository.save(currencyEntity);
+
+        List<CurrencyEntity> currencyEntities = new ArrayList<>();
+        currencyEntities.add(currencyEntity2);
+        currencyEntities.add(currencyEntity);
+        currencyJDBCRepository.batchInsert(currencyEntities);
 
         dtoResponse.addMessagePair(MessagePairUtils.messagePair(CurrencyMessageCode.CY_1101));
 
