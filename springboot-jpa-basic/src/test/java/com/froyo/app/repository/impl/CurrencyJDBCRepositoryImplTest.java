@@ -1,40 +1,40 @@
 package com.froyo.app.repository.impl;
 
 import com.froyo.app.model.entity.CurrencyEntity;
-import org.apache.commons.lang3.reflect.FieldUtils;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ParameterizedPreparedStatementSetter;
 
+import java.sql.PreparedStatement;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-
 class CurrencyJDBCRepositoryImplTest {
 
-    private CurrencyJDBCRepositoryImpl currencyJDBCRepositoryImpl;
+    @InjectMocks
+    CurrencyJDBCRepositoryImpl repo;
 
     @Mock
-    private JdbcTemplate jdbcTemplate;
+    JdbcTemplate jdbcTemplate;
 
-    @Before
-    void setUp() throws IllegalAccessException {
-        MockitoAnnotations.initMocks(true);
-        currencyJDBCRepositoryImpl = new CurrencyJDBCRepositoryImpl();
-        FieldUtils.writeField(currencyJDBCRepositoryImpl, //
-                "jdbcTemplate", //
-                jdbcTemplate
-        );
+    @Mock
+    PreparedStatement preparedStatement;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.initMocks(this);
     }
 
     @Test
     void batchInsert() {
-
 
         CurrencyEntity currencyEntity2 = new CurrencyEntity();
         currencyEntity2.setCurrency(LocalDateTime.now().toString());
@@ -46,16 +46,26 @@ class CurrencyJDBCRepositoryImplTest {
         currencyEntities.add(currencyEntity2);
         currencyEntities.add(currencyEntity);
 
-        int[][] result = {{1,2},{3,4}};
+        int[][] result = {{1, 2}, {3, 4}};
         Mockito.when(
                 jdbcTemplate.batchUpdate(
-                        Mockito.isA(String.class), //
-                        Mockito.isA(ArrayList.class), //
-                        Mockito.isA(Integer.class), //
-                        Mockito.isA(ParameterizedPreparedStatementSetter.class) //
-                )).thenReturn(result);
+                        Mockito.anyString(), //
+                        Mockito.anyCollection(), //
+                        Mockito.anyInt(), //
+                        Mockito.any(ParameterizedPreparedStatementSetter.class) //
+                )).thenAnswer(new Answer() {
 
-        currencyJDBCRepositoryImpl.batchInsert(currencyEntities);
+            @Override
+            public Object answer(InvocationOnMock invocation) throws Throwable {
+
+                Object obj[] = invocation.getArguments();
+                ((ParameterizedPreparedStatementSetter) obj[3]).setValues(preparedStatement, ((ArrayList<CurrencyEntity>) obj[1]).get(0));
+
+                return result;
+            }
+        });
+
+        repo.batchInsert(currencyEntities);
 
     }
 }
