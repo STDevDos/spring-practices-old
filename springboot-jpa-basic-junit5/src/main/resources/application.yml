@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: springBoot-jpa-basic-junit5
+  jpa:
+    open-in-view: false #warning with true -- https://www.baeldung.com/transaction-configuration-with-jpa-and-spring
+
+# @ConfigurationProperties(prefix = "mysql.datasource") extends HikariConfig
+mysql:
+  datasource:
+    jdbcUrl: jdbc:mysql://localhost:3306/dbtest?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useCursors=false&sendStringParametersAsUnicode=false&characterEncoding=UTF8
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+    connectionTestQuery: SELECT 1 FROM DUAL
+    minIdle: 1
+    maxPoolSize: 5
+    poolName: SpringBootHikariPostgres
+
