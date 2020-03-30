@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
 
+// use JoinColumn https://www.baeldung.com/jpa-join-column
 @Entity
 @Table(name = "currency",uniqueConstraints = {
         @UniqueConstraint(columnNames = "currency", name = "uniqueCurrencyConstraint")
