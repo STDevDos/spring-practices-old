@@ -38,25 +38,24 @@
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
+            <version>${hikaricp.version}</version>
         </dependency>
 
-        <!-- Start Hibernate 5.x ORM -->
         <dependency>
-            <groupId>org.hibernate</groupId>
+            <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.4.5.Final</version>
+            <version>6.0.0.Alpha4</version>
         </dependency>
         <dependency>
-            <groupId>org.hibernate</groupId>
+            <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.4.5.Final</version>
+            <version>6.0.0.Alpha4</version>
         </dependency>
         <dependency>
-            <groupId>org.hibernate</groupId>
+            <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>6.0.17.Final</version>
+            <version>7.0.0.Alpha1</version>
         </dependency>
-        <!-- End Hibernate 5.x -->
 
         <!-- Spring Object/Relational Mapping -->
         <dependency>
@@ -76,6 +75,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
         </dependency>
 
     </dependencies>

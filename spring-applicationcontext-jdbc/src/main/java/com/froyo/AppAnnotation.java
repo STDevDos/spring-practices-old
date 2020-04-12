@@ -20,23 +20,23 @@ public class AppAnnotation {
 
         AnimalsService animalsService = appContext.getBean(AnimalsService.class);
 
-        /*AnimalsEntity animalsEntity = new AnimalsEntity();
-        animalsEntity.setId(1);
-        animalsEntity.setName("Avestruz");
-        animalsEntity.setDepredador("León,Guepardo");
-        animalsEntity.setOrigen("África");
-        animalsEntity.setDato_curioso("El ave mas grande del mundo");
-        animalsService.addAnimal(animalsEntity);*/
+//        AnimalsEntity animalsEntity = new AnimalsEntity();
+//        animalsEntity.setId(1);
+//        animalsEntity.setName("Avestruz");
+//        animalsEntity.setDepredador("León,Guepardo");
+//        animalsEntity.setOrigen("África");
+//        animalsEntity.setDato_curioso("El ave mas grande del mundo");
+//        animalsService.addAnimal(animalsEntity);
 
         //animalsService.deleteAnimal(1);
 
-        /*AnimalsEntity animalsEntity = new AnimalsEntity();
-        animalsEntity.setId(1);
-        animalsEntity.setName("Avestruz");
-        animalsEntity.setDepredador("León,Guepardo");
-        animalsEntity.setOrigen("África");
-        animalsEntity.setDato_curioso("El ave mas grande del mundo");
-        animalsService.editAnimal(animalsEntity);*/
+//        AnimalsEntity animalsEntity = new AnimalsEntity();
+//        animalsEntity.setId(1);
+//        animalsEntity.setName("Avestruz");
+//        animalsEntity.setDepredador("León,Guepardo");
+//        animalsEntity.setOrigen("África");
+//        animalsEntity.setDato_curioso("El ave mas grande del mundo");
+//        animalsService.editAnimal(animalsEntity);
 
         //log.info(animalsService.find(1).toString());
         //log.info(animalsService.findAll().toString());
