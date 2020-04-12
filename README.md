@@ -1,2 +1,2 @@
-# initial-examples
+# spring-practices
 Ejemplos spring
