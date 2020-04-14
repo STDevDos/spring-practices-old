@@ -9,11 +9,11 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @Configuration
 @ComponentScan({"com.froyo.timeinmethods"})
 @EnableAspectJAutoProxy
-public class TutorialAOP {
+public class AppSpringBootAOP {
 
     public static void main(String[] args) {
 
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(TutorialAOP.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppSpringBootAOP.class);
 
         CrudService ps = ctx.getBean(CrudService.class);
 

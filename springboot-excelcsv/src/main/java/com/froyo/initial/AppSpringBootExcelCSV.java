@@ -1,13 +1,13 @@
-package com.froyo.logback;
+package com.froyo.initial;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootLogback {
+public class AppSpringBootExcelCSV {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootLogback.class, args);
+        SpringApplication.run(AppSpringBootExcelCSV.class, args);
     }
 
 }

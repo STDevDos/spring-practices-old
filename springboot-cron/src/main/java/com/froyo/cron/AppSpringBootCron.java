@@ -15,15 +15,15 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @AllArgsConstructor
 @SpringBootApplication
 @EnableScheduling
-public class SpringCronApplication {
+public class AppSpringBootCron {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(SpringCronApplication.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AppSpringBootCron.class);
 
     private final CronProcess cronProcess;
 
     public static void main(String[] args) {
         LOGGER.info("SpringCronApplication::main");
-        SpringApplication.run(SpringCronApplication.class, args);
+        SpringApplication.run(AppSpringBootCron.class, args);
     }
 
     public void run(String... args) {

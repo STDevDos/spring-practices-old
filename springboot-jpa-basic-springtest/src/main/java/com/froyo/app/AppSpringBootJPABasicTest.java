@@ -1,13 +1,11 @@
-package com.froyo.springprofiles;
+package com.froyo.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringProfilesApplication {
-
+public class AppSpringBootJPABasicTest {
     public static void main(String[] args) {
-        SpringApplication.run(SpringProfilesApplication.class, args);
+        SpringApplication.run(AppSpringBootJPABasicTest.class, args);
     }
-
 }

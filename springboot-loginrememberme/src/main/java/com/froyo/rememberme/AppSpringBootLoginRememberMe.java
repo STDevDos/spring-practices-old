@@ -1,11 +1,12 @@
-package com.froyo.app;
+package com.froyo.rememberme;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootJPABasicJUnit {
+public class AppSpringBootLoginRememberMe {
+
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootJPABasicJUnit.class, args);
+        SpringApplication.run(AppSpringBootLoginRememberMe.class, args);
     }
 }

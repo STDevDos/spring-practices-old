@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @EnableEncryptableProperties
-public class SpringBootRestApiApplication {
+public class AppSpringBootRestApi {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootRestApiApplication.class, args);
+        SpringApplication.run(AppSpringBootRestApi.class, args);
     }
 
     @Bean(name = "encryptorBean")

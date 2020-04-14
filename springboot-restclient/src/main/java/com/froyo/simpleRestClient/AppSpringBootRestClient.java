@@ -15,10 +15,10 @@ import org.springframework.web.client.RestTemplate;
  */
 @Log4j2
 @SpringBootApplication
-public class SimpleRestClientApplication implements CommandLineRunner {
+public class AppSpringBootRestClient implements CommandLineRunner {
 
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(SimpleRestClientApplication.class);
+        SpringApplication app = new SpringApplication(AppSpringBootRestClient.class);
         //app.setWebEnvironment(false); //Establece si ésta aplicación se está ejecutando en un enterno web
         app.setWebApplicationType(WebApplicationType.NONE);
         args[0] = "Froy";

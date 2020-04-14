@@ -1,13 +1,13 @@
-package com.froyo.flowable;
+package com.froyo.logback;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AppFlowable {
+public class AppSpringBootLogback {
 
     public static void main(String[] args) {
-        SpringApplication.run(AppFlowable.class,args);
+        SpringApplication.run(AppSpringBootLogback.class, args);
     }
 
 }

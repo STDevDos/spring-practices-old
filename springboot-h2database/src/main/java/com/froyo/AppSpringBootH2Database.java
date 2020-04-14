@@ -1,13 +1,11 @@
-package com.froyo.mailtrap;
+package com.froyo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AppMailtrap {
-
+public class AppSpringBootH2Database {
     public static void main(String[] args) {
-        SpringApplication.run(AppMailtrap.class, args);
+        SpringApplication.run(AppSpringBootH2Database.class, args);
     }
-
 }

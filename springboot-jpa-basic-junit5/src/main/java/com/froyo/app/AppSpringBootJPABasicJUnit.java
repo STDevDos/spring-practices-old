@@ -1,13 +1,11 @@
-package com.froyo;
+package com.froyo.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringDroolsApplication {
-
+public class AppSpringBootJPABasicJUnit {
     public static void main(String[] args) {
-        SpringApplication.run(SpringDroolsApplication.class, args);
+        SpringApplication.run(AppSpringBootJPABasicJUnit.class, args);
     }
-
 }

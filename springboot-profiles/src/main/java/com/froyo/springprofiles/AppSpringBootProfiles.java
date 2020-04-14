@@ -1,13 +1,11 @@
-package com.froyo.practice;
+package com.froyo.springprofiles;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootEhCache {
-
+public class AppSpringBootProfiles {
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootEhCache.class, args);
+        SpringApplication.run(AppSpringBootProfiles.class, args);
     }
-
 }
