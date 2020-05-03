@@ -32,7 +32,7 @@ public class MailtrapServiceImpl implements MailtrapService {
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         simpleMailMessage.setFrom(feedbackDTO.getEmail());
         simpleMailMessage.setTo("57a591e416-d85bfd@inbox.mailtrap.io");
-        simpleMailMessage.setSubject(String.format("New feedback from %s ",feedbackDTO.getName()));
+        simpleMailMessage.setSubject(String.format("New feedback from %s ", feedbackDTO.getName()));
         simpleMailMessage.setText(feedbackDTO.getFeedback());
 
         //Send mail

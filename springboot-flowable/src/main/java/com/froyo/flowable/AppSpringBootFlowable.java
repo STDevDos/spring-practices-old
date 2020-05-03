@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AppSpringBootFlowable {
 
     public static void main(String[] args) {
-        SpringApplication.run(AppSpringBootFlowable.class,args);
+        SpringApplication.run(AppSpringBootFlowable.class, args);
     }
 
 }

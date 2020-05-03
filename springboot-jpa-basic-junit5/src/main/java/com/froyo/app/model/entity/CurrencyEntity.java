@@ -7,9 +7,9 @@ import java.io.Serializable;
 
 // use JoinColumn https://www.baeldung.com/jpa-join-column
 @Entity
-@Table(name = "currency",uniqueConstraints = {
+@Table(name = "currency", uniqueConstraints = {
         @UniqueConstraint(columnNames = "currency", name = "uniqueCurrencyConstraint")
-    }
+}
 )
 @Data
 public class CurrencyEntity implements Serializable {

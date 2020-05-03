@@ -22,9 +22,9 @@ public class AppSpringBootAOP {
         ps.update();
         ps.delete();
 
-        try{
+        try {
             ps.select();
-        }catch(Exception ex){
+        } catch (Exception ex) {
             //ex.printStackTrace();
         }
 

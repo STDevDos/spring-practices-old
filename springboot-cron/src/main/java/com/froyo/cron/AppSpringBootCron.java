@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
- *
  * https://www.mkyong.com/spring-boot/spring-boot-non-web-application-example/
  * CommandLineRunner:In Spring Boot, to create a non-web application, implements CommandLineRunner and override the run method.
  */

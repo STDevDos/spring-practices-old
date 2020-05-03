@@ -9,7 +9,7 @@ import java.util.Map;
 @Data
 public class MapObjectRowResponse extends AbstractResponse {
 
-    private List<Map<String,String>> objMapRowList;
+    private List<Map<String, String>> objMapRowList;
     private List<String> headerList;
 
 }

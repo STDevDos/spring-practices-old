@@ -16,20 +16,19 @@ public class MailtrapRestController {
     private final MailtrapService mailtrapService;
 
     @PostMapping("/sendFeedback")
-    public SendFeedbackResponse sendFeedback(@RequestBody @Valid FeedbackDTO feedbackDTO){
+    public SendFeedbackResponse sendFeedback(@RequestBody @Valid FeedbackDTO feedbackDTO) {
         return mailtrapService.sendFeedback(feedbackDTO);
     }
 
     @GetMapping("/devtools")
-    public String devtools(){
+    public String devtools() {
         return "success mil mascaras";
     }
 
     @GetMapping("/devtools2")
-    public String devtools2(){
+    public String devtools2() {
         return "success seis";
     }
-
 
 
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class InitialRestController {
 
     @GetMapping("/initial")
-    public String initial(){
+    public String initial() {
         return "com/froyo/initial";
     }
 

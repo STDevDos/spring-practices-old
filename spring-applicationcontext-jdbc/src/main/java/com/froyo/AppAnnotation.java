@@ -46,10 +46,10 @@ public class AppAnnotation {
 
     }
 
-    private static void showAllBeans(AnnotationConfigApplicationContext appContext){
-        for(String bean:appContext.getBeanDefinitionNames()){
+    private static void showAllBeans(AnnotationConfigApplicationContext appContext) {
+        for (String bean : appContext.getBeanDefinitionNames()) {
             Object object = appContext.getBean(bean);
-            log.info(String.format("Bean name: %s Bean object: %s",bean,object));
+            log.info(String.format("Bean name: %s Bean object: %s", bean, object));
         }
     }
 

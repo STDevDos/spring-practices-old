@@ -32,7 +32,7 @@ public class AsyncService {
         EmployeeNames employeeNameData = restTemplate.getForObject("http://localhost:8080/names", EmployeeNames.class);
 
         log.info("employeeNameData, {}", employeeNameData);
-        Thread.sleep(1000L);	//Intentional delay
+        Thread.sleep(1000L);    //Intentional delay
         log.info("employeeNameData completed");
         return CompletableFuture.completedFuture(employeeNameData);
     }
@@ -43,7 +43,7 @@ public class AsyncService {
         EmployeeAddresses employeeAddressData = restTemplate.getForObject("http://localhost:8080/addresses", EmployeeAddresses.class);
 
         log.info("employeeAddressData, {}", employeeAddressData);
-        Thread.sleep(1000L);	//Intentional delay
+        Thread.sleep(1000L);    //Intentional delay
         log.info("employeeAddressData completed");
         return CompletableFuture.completedFuture(employeeAddressData);
     }
@@ -54,7 +54,7 @@ public class AsyncService {
         EmployeePhone employeePhoneData = restTemplate.getForObject("http://localhost:8080/phones", EmployeePhone.class);
 
         log.info("employeePhoneData, {}", employeePhoneData);
-        Thread.sleep(1000L);	//Intentional delay
+        Thread.sleep(1000L);    //Intentional delay
         log.info("employeePhoneData completed");
         return CompletableFuture.completedFuture(employeePhoneData);
     }

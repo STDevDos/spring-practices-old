@@ -24,6 +24,13 @@ class EmployeePredicatesTest {
         new EmployeePredicates();
     }
 
+    static Stream<Arguments> argumentProvider() {
+        return Stream.of(
+                arguments("abc", 3),
+                arguments("lemon", 2)
+        );
+    }
+
     @BeforeEach
     void setUp() {
         employee = null;
@@ -98,16 +105,8 @@ class EmployeePredicatesTest {
 
     }
 
-
     @ParameterizedTest(name = "#{index} - Test with {0} and {1}")
     @MethodSource("argumentProvider")
     void test_method_multi(String str, int length) {
-    }
-
-    static Stream<Arguments> argumentProvider() {
-        return Stream.of(
-                arguments("abc", 3),
-                arguments("lemon", 2)
-        );
     }
 }

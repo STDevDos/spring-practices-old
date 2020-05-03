@@ -9,5 +9,6 @@ import java.util.Optional;
 
 public interface CurrencyService {
     CurrencyEntityDTOResponse saveCurrency(final CurrencyEntityDTORequest dtoRequest);
+
     Optional<CurrencyEntity> retrieveCurrency();
 }

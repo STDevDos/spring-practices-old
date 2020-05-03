@@ -29,11 +29,10 @@ public class CurrencyRestController {
     }
 
     @GetMapping("/retrieveCurrency")
-    private CurrencyEntity retrieveCurrency(){
+    private CurrencyEntity retrieveCurrency() {
         currencyMysqlServiceImpl.retrieveCurrency();
         return null;
     }
-
 
 
 }

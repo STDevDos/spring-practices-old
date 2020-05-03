@@ -12,7 +12,8 @@ import java.time.LocalDateTime;
 public class LoggingAspect {
 
     @Pointcut("execution(* com.froyo.timeinmethods.CrudService.*(..))")
-    public void serviceMethod() { }
+    public void serviceMethod() {
+    }
 
     @Before("serviceMethod()")
     public void beforeLoginAdvice(JoinPoint joinPoint) {
@@ -26,7 +27,7 @@ public class LoggingAspect {
         System.out.println("finalizado " + LocalDateTime.now());
     }
 
-    @AfterThrowing (pointcut = "execution(* com.froyo.timeinmethods.CrudService.*(..))", throwing = "ex")
+    @AfterThrowing(pointcut = "execution(* com.froyo.timeinmethods.CrudService.*(..))", throwing = "ex")
     public void afterThrowing(SQLException ex) throws Throwable {
         System.out.println("Ha ocurrido una exception en el servicio CrudService, se ha enviado un email. " + ex);
     }

@@ -22,19 +22,19 @@ public class AnimalsRepositoryImpl implements AnimalsRepository {
     @Override
     public Optional<AnimalsEntity> find(Integer id) {
 
-        try{
+        try {
             String sql = "SELECT * FROM animals where id = ?";
-            Object[] object = new Object[] {
+            Object[] object = new Object[]{
                     id
             };
             BeanPropertyRowMapper beanPropertyRowMapper = new BeanPropertyRowMapper(AnimalsEntity.class);
 
-            AnimalsEntity animalsEntity = (AnimalsEntity) jdbcTemplate.queryForObject(sql,object, beanPropertyRowMapper);
+            AnimalsEntity animalsEntity = (AnimalsEntity) jdbcTemplate.queryForObject(sql, object, beanPropertyRowMapper);
 
             return Optional.of(animalsEntity);
 
-        }catch(Exception ex){
-            log.log(Level.WARNING,"ERROR @@@ find() ",ex);
+        } catch (Exception ex) {
+            log.log(Level.WARNING, "ERROR @@@ find() ", ex);
             return Optional.empty();
         }
 
@@ -43,10 +43,10 @@ public class AnimalsRepositoryImpl implements AnimalsRepository {
     @Override
     public void addAnimal(AnimalsEntity animalsEntity) {
 
-        try{
+        try {
 
             String sql = "INSERT INTO animals (id,name,origen,depredador,dato_curioso) VALUES (?, ?, ?, ?,?)";
-            Object[] object = new Object[] {
+            Object[] object = new Object[]{
                     animalsEntity.getId(),
                     animalsEntity.getName(),
                     animalsEntity.getOrigen(),
@@ -54,11 +54,11 @@ public class AnimalsRepositoryImpl implements AnimalsRepository {
                     animalsEntity.getDato_curioso()
             };
 
-            jdbcTemplate.update(sql,object);
+            jdbcTemplate.update(sql, object);
             log.info("SUCCESS: Animal Saved!!");
 
-        }catch(Exception ex){
-            log.log(Level.WARNING,"ERROR @@@ addAnimal() ",ex);
+        } catch (Exception ex) {
+            log.log(Level.WARNING, "ERROR @@@ addAnimal() ", ex);
         }
 
     }
@@ -66,9 +66,9 @@ public class AnimalsRepositoryImpl implements AnimalsRepository {
     @Override
     public void editAnimal(AnimalsEntity animalsEntity) {
 
-        try{
+        try {
             String sql = "UPDATE animals SET name = ? , origen = ? , depredador = ?, dato_curioso = ? WHERE id = ? ";
-            Object[] object = new Object[] {
+            Object[] object = new Object[]{
                     animalsEntity.getName(),
                     animalsEntity.getOrigen(),
                     animalsEntity.getDepredador(),
@@ -76,11 +76,11 @@ public class AnimalsRepositoryImpl implements AnimalsRepository {
                     animalsEntity.getId()
             };
 
-            jdbcTemplate.update(sql,object);
+            jdbcTemplate.update(sql, object);
             log.info("SUCCESS: Animal Updated!!");
 
-        }catch(Exception ex){
-            log.log(Level.WARNING,"ERROR @@@ editAnimal() ",ex);
+        } catch (Exception ex) {
+            log.log(Level.WARNING, "ERROR @@@ editAnimal() ", ex);
         }
 
 
@@ -89,14 +89,14 @@ public class AnimalsRepositoryImpl implements AnimalsRepository {
     @Override
     public void deleteAnimal(int id) {
 
-        try{
+        try {
             String sql = "DELETE from animals WHERE id = ? ";
             jdbcTemplate.update(sql, id);
 
             log.info("Animal Deleted!!");
 
-        }catch(Exception ex){
-            log.log(Level.WARNING,"ERROR @@@ deleteAnimal() ",ex);
+        } catch (Exception ex) {
+            log.log(Level.WARNING, "ERROR @@@ deleteAnimal() ", ex);
         }
 
 
@@ -105,14 +105,14 @@ public class AnimalsRepositoryImpl implements AnimalsRepository {
     @Override
     public List<AnimalsEntity> findAll() {
 
-        try{
+        try {
             String sql = "SELECT * FROM animals ";
             BeanPropertyRowMapper beanPropertyRowMapper = new BeanPropertyRowMapper(AnimalsEntity.class);
 
-            return jdbcTemplate.query(sql,beanPropertyRowMapper);
+            return jdbcTemplate.query(sql, beanPropertyRowMapper);
 
-        }catch(Exception ex){
-            log.log(Level.WARNING,"ERROR @@@ findAll() ",ex);
+        } catch (Exception ex) {
+            log.log(Level.WARNING, "ERROR @@@ findAll() ", ex);
             return null;
         }
     }

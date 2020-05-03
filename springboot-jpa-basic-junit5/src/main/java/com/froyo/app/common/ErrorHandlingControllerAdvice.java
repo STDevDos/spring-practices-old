@@ -27,7 +27,7 @@ public class ErrorHandlingControllerAdvice {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     ValidationErrorResponse onConstraintValidationException(final ConstraintViolationException ex) {
         ValidationErrorResponse error = new ValidationErrorResponse();
-        error.addMessagePair(new MessagePair(ex.getConstraintName(),ex.getCause().getMessage(), MessagePairTypeCode.ERROR));
+        error.addMessagePair(new MessagePair(ex.getConstraintName(), ex.getCause().getMessage(), MessagePairTypeCode.ERROR));
         return error;
     }
 
@@ -42,9 +42,9 @@ public class ErrorHandlingControllerAdvice {
         return error;
     }
 
-    @ExceptionHandler({ MultipartException.class, AccessDeniedException.class,
+    @ExceptionHandler({MultipartException.class, AccessDeniedException.class,
             HttpRequestMethodNotSupportedException.class,
-            HttpMediaTypeNotSupportedException.class })
+            HttpMediaTypeNotSupportedException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     ValidationErrorResponse onMultiException(final Exception exception, final HttpServletRequest request) {
 
@@ -53,7 +53,7 @@ public class ErrorHandlingControllerAdvice {
         return error;
     }
 
-    @ExceptionHandler({ HttpMessageNotReadableException.class })
+    @ExceptionHandler({HttpMessageNotReadableException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     ValidationErrorResponse onHttpMessageNotReadableException(final Exception exception,
                                                               final HttpServletRequest request) {

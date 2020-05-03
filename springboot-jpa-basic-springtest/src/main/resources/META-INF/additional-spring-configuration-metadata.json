@@ -55,4 +55,5 @@
       "type": "java.lang.String",
       "description": "Description for mysql.datasource.jdbc-Url."
     }
-  ] }
+  ]
+}

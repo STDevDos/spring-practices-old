@@ -23,7 +23,7 @@ import java.util.*;
 public class InitialRestController {
 
     @GetMapping("/basicCsvWriter")
-    public String basicCsvWriter(){
+    public String basicCsvWriter() {
 
         try {
 
@@ -54,7 +54,7 @@ public class InitialRestController {
         BufferedReader reader = Files.newBufferedReader(Paths.get("C:\\test\\student.csv"));
         CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withHeader("Student Name", "Fees").withIgnoreHeaderCase().withTrim());
 
-        for (CSVRecord csvRecord: csvParser) {
+        for (CSVRecord csvRecord : csvParser) {
 
             // Accessing Values by Column Index
             String name = csvRecord.get(0);
@@ -87,12 +87,12 @@ public class InitialRestController {
             headerList.add(me.getKey());
         }
 
-        List<Map<String,String>> objMapRowList = new ArrayList<>();
-        for (CSVRecord csvRecord: csvParser) {
+        List<Map<String, String>> objMapRowList = new ArrayList<>();
+        for (CSVRecord csvRecord : csvParser) {
 
-            Map<String,String> objMapRow = new HashMap<>();
-            for(String header : headerList){
-                objMapRow.put(header,csvRecord.get(header));
+            Map<String, String> objMapRow = new HashMap<>();
+            for (String header : headerList) {
+                objMapRow.put(header, csvRecord.get(header));
             }
 
             objMapRowList.add(objMapRow);

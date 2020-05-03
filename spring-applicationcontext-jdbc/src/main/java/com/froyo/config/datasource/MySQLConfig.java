@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 
 @AllArgsConstructor
 @Configuration
-@PropertySource(value = { "classpath:application.properties" })
+@PropertySource(value = {"classpath:application.properties"})
 public class MySQLConfig {
 
     private final Environment env;

@@ -11,7 +11,7 @@ import java.util.Locale;
 
 /**
  * How to use:
- *
+ * <p>
  * "@ JsonSerialize(using = MoneySerializer.class)"
  * private BigDecimal amount;
  * <p>
