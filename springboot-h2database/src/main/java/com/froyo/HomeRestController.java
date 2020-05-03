@@ -16,9 +16,9 @@ import javax.annotation.PostConstruct;
 import javax.validation.Valid;
 import java.util.List;
 
-@AllArgsConstructor
 @RestController
 @RequestMapping("/persona")
+@AllArgsConstructor
 public class HomeRestController {
 
     private final JdbcTemplate jdbcTemplate;

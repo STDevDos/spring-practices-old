@@ -1,7 +1,6 @@
 package com.froyo;
 
 import com.froyo.model.dto.PlanetDTO;
-import com.froyo.model.entity.AnimalsEntity;
 import com.froyo.service.AnimalsService;
 import lombok.extern.java.Log;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

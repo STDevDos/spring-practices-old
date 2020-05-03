@@ -4,8 +4,6 @@ import com.froyo.model.entity.AnimalsEntity;
 import com.froyo.repository.AnimalsRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

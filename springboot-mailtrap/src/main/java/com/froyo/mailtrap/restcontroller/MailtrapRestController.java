@@ -1,11 +1,9 @@
 package com.froyo.mailtrap.restcontroller;
 
-import com.froyo.mailtrap.config.properties.EmailConfig;
 import com.froyo.mailtrap.dto.FeedbackDTO;
 import com.froyo.mailtrap.dto.inout.SendFeedbackResponse;
 import com.froyo.mailtrap.service.MailtrapService;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
