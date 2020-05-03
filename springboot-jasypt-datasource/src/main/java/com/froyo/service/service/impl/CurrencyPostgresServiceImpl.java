@@ -24,6 +24,9 @@ public class CurrencyPostgresServiceImpl implements CurrencyService {
         CurrencyEntity currencyEntity = new CurrencyEntity();
         currencyEntity.setCurrency(currencyRequest.getCurrency());
 
+        //es final
+        currencyRequest.setCurrency("k");
+
         currencyPostgresRepository.save(currencyEntity);
         currencyResponse.addMessagePair(MessagePairUtils.messagePair(CurrencyMessageCode.CY_1101));
 
