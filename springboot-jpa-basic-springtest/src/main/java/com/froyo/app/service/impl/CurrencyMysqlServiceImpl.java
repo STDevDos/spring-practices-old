@@ -57,8 +57,8 @@ public class CurrencyMysqlServiceImpl implements CurrencyService {
     }
 
     @Override
-    public Optional<CurrencyEntity> retrieveCurrency() {
-        return currencyMysqlRepository.findById(100L);
+    public Optional<CurrencyEntity> retrieveCurrency(final long id) {
+        return currencyMysqlRepository.findById(id);
     }
 
 }

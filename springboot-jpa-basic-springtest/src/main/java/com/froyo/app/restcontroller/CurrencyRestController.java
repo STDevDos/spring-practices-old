@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api")
@@ -28,10 +30,10 @@ public class CurrencyRestController {
         return result;
     }
 
-    @GetMapping("/retrieveCurrency")
-    private CurrencyEntity retrieveCurrency() {
-        currencyMysqlServiceImpl.retrieveCurrency();
-        return null;
+    @GetMapping("/retrieveCurrency/{id}")
+    private CurrencyEntity retrieveCurrency(@PathVariable("id") long id) {
+        Optional<CurrencyEntity> optionalCurrencyEntity = currencyMysqlServiceImpl.retrieveCurrency(id);
+        return optionalCurrencyEntity.orElse(null);
     }
 
 
