@@ -70,7 +70,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.2.12</version>
+            <version>${postgresql.version}</version>
         </dependency>
 
         <!-- hikari -->
@@ -83,17 +83,17 @@
         <dependency>
             <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>6.0.0.Alpha4</version>
+            <version>6.0.0.Alpha5</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>6.0.0.Alpha4</version>
+            <version>6.0.0.Alpha5</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>7.0.0.Alpha1</version>
+            <version>${hibernate-validator.version}</version>
         </dependency>
 
     </dependencies>

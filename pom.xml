@@ -13,7 +13,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.6.RELEASE</version>
+        <version>2.3.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -61,7 +61,8 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.source>${java.version}</maven.compiler.source>
 
-        <junit-plataform.version>5.6.2</junit-plataform.version>
+        <junit-plataform.version>5.7.0-M1</junit-plataform.version>
+        <junit-platform-commons.version>1.7.0-M1</junit-platform-commons.version>
         <mockito-junit-jupiter.version>3.3.3</mockito-junit-jupiter.version>
 
         <lombok.version>1.18.12</lombok.version>
@@ -70,7 +71,10 @@
 
         <swagger.version>2.9.2</swagger.version>
         <hikaricp.version>3.4.2</hikaricp.version>
-        <mysql-connector-java.version>8.0.19</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.20</mysql-connector-java.version>
+        <hibernate-validator.version>7.0.0.Alpha3</hibernate-validator.version>
+        <postgresql.version>42.2.12.jre7</postgresql.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
 
     </properties>
 
@@ -104,6 +108,11 @@
             <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validation-api.version}</version>
+        </dependency>
 
         <!-- Apache Utils -->
         <dependency>
@@ -126,12 +135,17 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+            <version>${junit-platform-commons.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
             <version>${mockito-junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
-
 
         <!-- Third-party assertion libraries -->
         <dependency>
@@ -152,6 +166,7 @@
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -175,6 +190,13 @@
                         <exclude>org.apache.commons:commons-collections4</exclude>
                     </excludes>
                 </configuration>
+            </plugin>
+
+            <!-- https://maven.apache.org/plugins/maven-dependency-plugin/ -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.2</version>
             </plugin>
 
             <!--            <plugin>-->

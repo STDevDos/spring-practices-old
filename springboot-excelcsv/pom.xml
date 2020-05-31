@@ -25,20 +25,6 @@
         </dependency>
         <!--End Añadiendo dependencia web // @RestTemplate,etc... -->
 
-        <!-- JUnit5 -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-plataform.version}</version>
-            <scope>test</scope> <!-- test folder -->
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-plataform.version}</version>
-            <scope>test</scope> <!-- test folder -->
-        </dependency>
-
         <!-- dependencias del ejemplo -->
         <dependency>
             <groupId>org.apache.commons</groupId>

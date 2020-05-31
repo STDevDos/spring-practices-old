@@ -11,6 +11,10 @@
 
     <artifactId>springboot-flowable</artifactId>
 
+    <properties>
+        <flowable-version>6.4.0</flowable-version>
+    </properties>
+
     <dependencies>
 
         <dependency>
@@ -30,9 +34,5 @@
         </dependency>
 
     </dependencies>
-
-    <properties>
-        <flowable-version>6.4.0</flowable-version>
-    </properties>
 
 </project>
