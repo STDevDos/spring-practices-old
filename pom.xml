@@ -49,6 +49,7 @@
         <module>springboot-basic</module>
         <module>springboot-jpa-basic-junit5</module>
         <module>springboot-jpa-basic-springtest</module>
+        <module>springboot-events</module>
     </modules>
 
     <properties>
