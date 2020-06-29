@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class CurrencyRestController {
 
-    @Qualifier("currencyPostgresServiceImpl")
-    private final CurrencyService currencyPostgresService;
+//    @Qualifier("currencyPostgresServiceImpl")
+//    private final CurrencyService currencyPostgresService;
 
     @Qualifier("currencyMysqlServiceImpl")
     private final CurrencyService currencyMysqlServiceImpl;
 
-    @Qualifier("currencyH2ServiceImpl")
-    private final CurrencyService currencyH2Service;
+//    @Qualifier("currencyH2ServiceImpl")
+//    private final CurrencyService currencyH2Service;
 
     @PostMapping("/addCurrency")
     private CurrencyResponse addCurrency(@RequestBody CurrencyRequest currencyRequest) {
@@ -30,14 +30,14 @@ public class CurrencyRestController {
         CurrencyResponse result = new CurrencyResponse();
         result.setCurrencyRequest(currencyRequest);
 
-        CurrencyResponse currencyResponseP = currencyPostgresService.saveCurrency(currencyRequest);
-        result.getMessagePairList().addAll(currencyResponseP.getMessagePairList());
+//        CurrencyResponse currencyResponseP = currencyPostgresService.saveCurrency(currencyRequest);
+//        result.getMessagePairList().addAll(currencyResponseP.getMessagePairList());
 
         CurrencyResponse currencyResponseM = currencyMysqlServiceImpl.saveCurrency(currencyRequest);
         result.getMessagePairList().addAll(currencyResponseM.getMessagePairList());
 
-        CurrencyResponse currencyResponseH = currencyH2Service.saveCurrency(currencyRequest);
-        result.getMessagePairList().addAll(currencyResponseH.getMessagePairList());
+//        CurrencyResponse currencyResponseH = currencyH2Service.saveCurrency(currencyRequest);
+//        result.getMessagePairList().addAll(currencyResponseH.getMessagePairList());
 
         return result;
     }

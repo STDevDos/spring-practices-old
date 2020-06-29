@@ -10,6 +10,10 @@ import com.froyo.service.service.CurrencyService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
 @AllArgsConstructor
 @Service("currencyMysqlServiceImpl")
 public class CurrencyMysqlServiceImpl implements CurrencyService {
@@ -23,6 +27,9 @@ public class CurrencyMysqlServiceImpl implements CurrencyService {
 
         CurrencyEntity currencyEntity = new CurrencyEntity();
         currencyEntity.setCurrency(currencyRequest.getCurrency());
+        currencyEntity.setFechacompleta(LocalDateTime.now());
+        currencyEntity.setFecha(LocalDate.now());
+        currencyEntity.setTiempo(LocalTime.now());
 
         currencyMysqlRepository.save(currencyEntity);
         currencyResponse.addMessagePair(MessagePairUtils.messagePair(CurrencyMessageCode.CY_1101));

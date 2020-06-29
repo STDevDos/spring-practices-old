@@ -5,6 +5,9 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "currency")
@@ -20,5 +23,14 @@ public class CurrencyEntity implements Serializable {
 
     @Column(name = "currency", nullable = false)
     private String currency;
+
+    @Column(name = "fechacompleta", nullable = false, columnDefinition = "TIMESTAMP")
+    private LocalDateTime fechacompleta;
+
+    @Column(name = "fecha", nullable = false, columnDefinition = "DATE")
+    private LocalDate fecha;
+
+    @Column(name = "tiempo", nullable = false, columnDefinition = "TIME")
+    private LocalTime tiempo;
 
 }
