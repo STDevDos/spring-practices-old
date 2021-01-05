@@ -2,9 +2,9 @@ package com.froyo.simpleRestClient;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -18,11 +18,19 @@ import org.springframework.web.client.RestTemplate;
 public class AppSpringBootRestClient implements CommandLineRunner {
 
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(AppSpringBootRestClient.class);
-        //app.setWebEnvironment(false); //Establece si ésta aplicación se está ejecutando en un enterno web
-        app.setWebApplicationType(WebApplicationType.NONE);
+
+        //old option
+//        SpringApplication app = new SpringApplication(AppSpringBootRestClient.class);
+//        app.setWebApplicationType(WebApplicationType.NONE);
+//        args[0] = "Froy";
+//        app.run(args);
+
+        //new option 20/09/2020
         args[0] = "Froy";
-        app.run(args);
+        new SpringApplicationBuilder(AppSpringBootRestClient.class)
+                .web(WebApplicationType.NONE)
+                .run(args);
+
     }
 
     @Override

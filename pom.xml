@@ -50,6 +50,7 @@
         <module>springboot-jpa-basic-junit5</module>
         <module>springboot-jpa-basic-springtest</module>
         <module>springboot-events</module>
+        <module>springboot-jpa-auditing</module>
     </modules>
 
     <properties>

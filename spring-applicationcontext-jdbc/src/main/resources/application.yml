@@ -1,0 +1,5 @@
+jdbc:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/dbtest?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useCursors=false&sendStringParametersAsUnicode=false&characterEncoding=UTF8
+    username: root
