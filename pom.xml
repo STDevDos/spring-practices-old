@@ -13,7 +13,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.0.RELEASE</version>
+        <version>2.3.8.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -28,7 +28,7 @@
         <module>springboot-bean-scope-annotation</module>
         <module>springboot-cron</module>
         <module>springboot-ehcache</module>
-        <module>springboot-exercises</module>
+        <!--        <module>springboot-exercises</module>-->
         <module>springboot-h2database</module>
         <module>springboot-jasypt-datasource</module>
         <module>springboot-loginrememberme</module>
@@ -50,18 +50,20 @@
         <module>springboot-jpa-basic-junit5</module>
         <module>springboot-jpa-basic-springtest</module>
         <module>springboot-events</module>
-        <module>springboot-jpa-auditing</module>
+        <module>springboot-platzi</module>
+        <module>springboot-aws</module>
     </modules>
 
     <properties>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>11</java.version>
+        <java.version>15</java.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
+        <!--        <maven.compiler.target>${java.version}</maven.compiler.target>-->
+        <!--        <maven.compiler.source>${java.version}</maven.compiler.source>-->
 
         <junit-plataform.version>5.7.0-M1</junit-plataform.version>
         <junit-platform-commons.version>1.7.0-M1</junit-platform-commons.version>
@@ -161,70 +163,129 @@
         <dependency>
             <groupId>com.froyo</groupId>
             <artifactId>java-mvn-messagesresponse</artifactId>
-            <version>1.0-snapshot</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
 
     <build>
-        <plugins>
+        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+            <plugins>
+                <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
-                <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                </configuration>
-            </plugin>
+                <!--                <plugin>-->
+                <!--                    <artifactId>maven-compiler-plugin</artifactId>-->
+                <!--                    <version>3.8.1</version>-->
+                <!--                    <configuration>-->
+                <!--                        &lt;!&ndash;Enable Java language preview features. Specify Java version.&ndash;&gt;-->
+                <!--                        &lt;!&ndash;This `release` tag replaced the pair of `source` and  `target` tags seen commented-out near top of this POM.&ndash;&gt;-->
+                <!--                        <release>15</release>-->
+                <!--                        <compilerArgs>-->
+                <!--                            &#45;&#45;enable-preview-->
+                <!--                        </compilerArgs>-->
+                <!--                    </configuration>-->
+                <!--                </plugin>-->
 
-            <!-- mvn versions:display-dependency-updates
-            plugin para identificar las últimas versiones de las
-            dependencias inyectadas en el POM
-            -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <version>2.7</version>
-                <configuration>
-                    <excludes>
-                        <exclude>org.apache.commons:commons-collections4</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-
-            <!-- https://maven.apache.org/plugins/maven-dependency-plugin/ -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.1.2</version>
-            </plugin>
-
-            <!--            <plugin>-->
-            <!--                <groupId>org.apache.maven.plugins</groupId>-->
-            <!--                <artifactId>maven-enforcer-plugin</artifactId>-->
-            <!--                <version>3.0.0-M3</version>-->
-            <!--                <executions>-->
-            <!--                    <execution>-->
-            <!--                        <id>default-cli</id>-->
-            <!--                        <goals>-->
-            <!--                            <goal>enforce</goal>-->
-            <!--                        </goals>-->
-            <!--                        <configuration>-->
-            <!--                            <rules>-->
-            <!--                                &lt;!&ndash;                                https://maven.apache.org/enforcer/enforcer-rules/&ndash;&gt;-->
-            <!--                                <dependencyConvergence>-->
-            <!--                                    <uniqueVersions>true</uniqueVersions>-->
-            <!--                                </dependencyConvergence>-->
-            <!--                                <banCircularDependencies />-->
-            <!--                            </rules>-->
-            <!--                        </configuration>-->
-            <!--                    </execution>-->
-            <!--                </executions>-->
-            <!--            </plugin>-->
-
-        </plugins>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M4</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.2.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>3.0.0-M1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>3.0.0-M1</version>
+                </plugin>
+                <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+                <plugin>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.8.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
+
+    <!--    <build>-->
+
+    <!--        <plugins>-->
+
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-compiler-plugin</artifactId>-->
+    <!--                <version>${maven-compiler-plugin.version}</version>-->
+    <!--                <configuration>-->
+    <!--                    &lt;!&ndash;Enable Java language preview features. Specify Java version.&ndash;&gt;-->
+    <!--                    &lt;!&ndash;This `release` tag replaced the pair of `source` and  `target` tags seen commented-out near top of this POM.&ndash;&gt;-->
+    <!--                    <release>${java.version}</release>-->
+    <!--                    <compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
+    <!--                </configuration>-->
+    <!--            </plugin>-->
+
+    <!--            &lt;!&ndash; mvn versions:display-dependency-updates-->
+    <!--            plugin para identificar las últimas versiones de las-->
+    <!--            dependencias inyectadas en el POM-->
+    <!--            &ndash;&gt;-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.codehaus.mojo</groupId>-->
+    <!--                <artifactId>versions-maven-plugin</artifactId>-->
+    <!--                <version>2.7</version>-->
+    <!--                <configuration>-->
+    <!--                    <excludes>-->
+    <!--                        <exclude>org.apache.commons:commons-collections4</exclude>-->
+    <!--                    </excludes>-->
+    <!--                </configuration>-->
+    <!--            </plugin>-->
+
+    <!--            &lt;!&ndash; https://maven.apache.org/plugins/maven-dependency-plugin/ &ndash;&gt;-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-dependency-plugin</artifactId>-->
+    <!--                <version>3.1.2</version>-->
+    <!--            </plugin>-->
+
+    <!--            &lt;!&ndash;            <plugin>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                <groupId>org.apache.maven.plugins</groupId>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                <artifactId>maven-enforcer-plugin</artifactId>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                <version>3.0.0-M3</version>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                <executions>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    <execution>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                        <id>default-cli</id>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                        <goals>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                            <goal>enforce</goal>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                        </goals>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                        <configuration>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                            <rules>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                                &lt;!&ndash;                                https://maven.apache.org/enforcer/enforcer-rules/&ndash;&gt;&ndash;&gt;-->
+    <!--            &lt;!&ndash;                                <dependencyConvergence>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                                    <uniqueVersions>true</uniqueVersions>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                                </dependencyConvergence>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                                <banCircularDependencies />&ndash;&gt;-->
+    <!--            &lt;!&ndash;                            </rules>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                        </configuration>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    </execution>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                </executions>&ndash;&gt;-->
+    <!--            &lt;!&ndash;            </plugin>&ndash;&gt;-->
+
+    <!--        </plugins>-->
+    <!--    </build>-->
 
 </project>

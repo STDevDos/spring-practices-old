@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: platzi
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop #Automaticamente se creará las tablas en la BD desde los @Entity
+      generate-ddl: true #no para prod
+    show-sql: true #no para prod
