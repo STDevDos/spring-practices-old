@@ -8,12 +8,14 @@
         http://www.springboottutorial.com/spring-boot-starter-parent
         spring boot startter parent contiene las dependencias necesarias para realizar
         un proyecto "spring boot"
+
+        : https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
     -->
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.8.RELEASE</version>
+        <version>2.3.9.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -98,6 +100,14 @@
                 <artifactId>junit-jupiter-api</artifactId>
                 <version>${junit-plataform.version}</version>
                 <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>io.awspring.cloud</groupId>
+                <artifactId>spring-cloud-aws-dependencies</artifactId>
+                <version>2.3.0</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
         </dependencies>
