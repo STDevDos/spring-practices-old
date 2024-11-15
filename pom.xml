@@ -64,8 +64,6 @@
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven.compiler.release>${java.version}</maven.compiler.release>
-        <!--        <maven.compiler.target>${java.version}</maven.compiler.target>-->
-        <!--        <maven.compiler.source>${java.version}</maven.compiler.source>-->
 
         <junit-plataform.version>5.7.0-M1</junit-plataform.version>
         <junit-platform-commons.version>1.7.0-M1</junit-platform-commons.version>
