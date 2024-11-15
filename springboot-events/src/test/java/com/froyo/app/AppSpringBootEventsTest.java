@@ -3,7 +3,6 @@ package com.froyo.app;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.SpringApplication;
 
@@ -13,16 +12,13 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class AppSpringBootEventsTest {
 
-    @InjectMocks
-    private AppSpringBootEvents appSpringBootEvents;
-
-    @Disabled("aquí hay: org.mockito.exceptions.base.MockitoException")
+    @Disabled("here hay: org.mockito.exceptions.base.MockitoException")
     @Test
-    void main() {
+    public void main() {
 
-        when(SpringApplication.run(mock(Class.class),new String[]{"uno"})) //
+        when(SpringApplication.run(mock(Class.class), "uno")) //
                 .thenReturn(null);
 
-        appSpringBootEvents.main(null);
+        AppSpringBootEvents.main(null);
     }
 }

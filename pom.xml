@@ -30,7 +30,7 @@
         <module>springboot-bean-scope-annotation</module>
         <module>springboot-cron</module>
         <module>springboot-ehcache</module>
-        <!--        <module>springboot-exercises</module>-->
+<!--        <module>springboot-exercises</module>-->
         <module>springboot-h2database</module>
         <module>springboot-jasypt-datasource</module>
         <module>springboot-loginrememberme</module>
@@ -60,7 +60,7 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>15</java.version>
+        <java.version>11</java.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven.compiler.release>${java.version}</maven.compiler.release>
