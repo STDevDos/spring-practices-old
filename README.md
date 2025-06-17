@@ -1,5 +1,9 @@
 # spring-practices
-Ejemplos spring
+Ejemplos Spring.
+
+## Requisitos
+
+- Java 21 o superior
 
 
 # Download
